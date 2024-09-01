@@ -1,0 +1,665 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root{
+  --avantages-salaries-color: rgb(165 28 241);
+  --bien-etre-color: rgb(255 32 85);
+  --espace-color: rgb(60 234 255); 
+  --formation-color: rgb(255 218 25);
+  --juridique-color: rgb(255 141 64);
+  --paie-color: rgb(228 10 175);
+  --recrutement-color: rgb(51 109 255);
+  --rse-color: rgb(176 232 54);
+  --veille-rh-color: rgb(117 117 117);
+  --entreprise-color: rgb(49 187 253);
+  --all-events-color: rgb(49 187 253);
+  --obligatoire-color: rgb(255 141 64);
+  --conseil-color: rgb(255 218 25);
+  --actualites-color: rgb(0 234 178);
+  --thematiques-color: rgb(228, 10, 175);
+  --events-color: rgb(0 234 178);
+}
+
+/* Styles généraux */
+body {
+  background: linear-gradient(0deg, #000, #272727);
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: "Righteous", sans-serif;
+  text-transform: capitalize;
+}
+
+.filter-col{
+  width: 20%;
+  flex: 2;
+}
+
+.calendar-col{
+  flex-basis: 78%;
+  flex: 7;
+}
+
+.filter-section {
+  background-color: rgb(39, 39, 39);
+  border-radius: .75rem;
+}
+
+.filter-category h4 {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+
+input[type=checkbox] {
+  /*border-radius: 4px;*/
+  height: 15px;
+  width: 15px;
+  /*background: transparent;*/
+  border: 1px solid white;
+}
+
+.filter-group {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filter-group label{
+  display: flex;
+  align-items: center;
+}
+
+.filter-group.formation:has(input:checked){
+  color: var(--formation-color);
+}
+
+.filter-group.formation input:checked{
+  background-color: var(--formation-color);
+  border-color: var(--formation-color);
+}
+
+.filter-group.avantages-salaries:has(input:checked){
+  color: var(--avantages-salaries-color);
+}
+
+.filter-group.avantages-salaries input:checked{
+  background-color: var(--avantages-salaries-color);
+  border-color: var(--avantages-salaries-color);
+}
+
+.filter-group.bien-etre:has(input:checked){
+  color: var(--bien-etre-color);
+}
+
+.filter-group.bien-etre input:checked{
+  background-color: var(--bien-etre-color);
+  border-color: var(--bien-etre-color);
+}
+
+.filter-group.espace:has(input:checked){
+  color: var(--espace-color);
+}
+
+.filter-group.espace input:checked{
+  background-color: var(--espace-color);
+  border-color: var(--espace-color);
+}
+
+.filter-group.juridique:has(input:checked){
+  color: var(--juridique-color);
+}
+
+.filter-group.juridique input:checked{
+  background-color: var(--juridique-color);
+  border-color: var(--juridique-color);
+}
+
+.filter-group.paie:has(input:checked){
+  color: var(--paie-color);
+}
+
+.filter-group.paie input:checked{
+  background-color: var(--paie-color);
+  border-color: var(--paie-color);
+}
+
+.filter-group.recrutement:has(input:checked){
+  color: var(--recrutement-color);
+}
+
+.filter-group.recrutement input:checked{
+  background-color: var(--recrutement-color);
+  border-color: var(--recrutement-color);
+}
+
+.filter-group.rse:has(input:checked){
+  color: var(--rse-color);
+}
+
+.filter-group.rse input:checked{
+  background-color: var(--rse-color);
+  border-color: var(--rse-color);
+}
+
+.filter-group.veille-rh:has(input:checked){
+  color: var(--veille-rh-color);
+}
+
+.filter-group.veille-rh input:checked{
+  background-color: var(--veille-rh-color);
+  border-color: var(--veille-rh-color);
+}
+
+.filter-group.entreprise:has(input:checked){
+  color: var(--entreprise-color);
+}
+
+.filter-group.entreprise input:checked{
+  background-color: var(--entreprise-color);
+  border-color: var(--entreprise-color);
+}
+
+.filter-group.all-events:has(input:checked){
+  color: var(--all-events-color);
+}
+
+.filter-group.all-events input:checked{
+  background-color: var(--all-events-color);
+  border-color: var(--all-events-color);
+}
+
+.filter-group.obligatoire:has(input:checked){
+  color: var(--obligatoire-color);
+}
+
+.filter-group.obligatoire input:checked{
+  background-color: var(--obligatoire-color);
+  border-color: var(--obligatoire-color);
+}
+
+.filter-group.conseil:has(input:checked){
+  color: var(--conseil-color);
+}
+
+.filter-group.conseil input:checked{
+  background-color: var(--conseil-color);
+  border-color: var(--conseil-color);
+}
+
+.filter-group.actualites:has(input:checked){
+  color: var(--actualites-color);
+}
+
+.filter-group.actualites input:checked{
+  background-color: var(--actualites-color);
+  border-color: var(--actualites-color);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/*.calendar-header h1 {
+    font-size: 2em;
+    color: #fff;
+}*/
+
+.calendar-controls .btn {
+  color: #fff;
+  border: 1px solid #fff;
+  margin-left: 5px;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: linear-gradient(180deg, #000, #272727);
+  border-radius: 1.5rem;
+  padding: 10px;
+}
+
+.calendar-title {
+  width: 100%;
+}
+
+.day {
+  width: 14.285%;
+  min-height: 7.5rem;
+  border: 0.5px solid #444;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+.day.disabled {
+  background-color: #2f2f2f;
+  color: #777;
+}
+
+.day.today {
+  background-color: white;
+  color: black;
+}
+
+.eventsBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.event {
+  color: white;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  white-space: nowrap;
+  margin-bottom: 0.25rem;
+  padding: 0.375rem 0.875rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  text-wrap: wrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.event.avantages-salaries{
+  background-color: var(--avantages-salaries-color);
+}
+
+.event.bien-etre {
+  background-color: var(--bien-etre-color);
+}
+
+.event.espace{
+  background-color: var(--espace-color);
+}
+
+.event.formation {
+  background-color: var(--formation-color);
+}
+
+.event.juridique {
+  background-color: var(--juridique-color);
+}
+
+.event.paie{
+  background-color: var(--juridique-color);
+}
+
+.event.paie{
+  background-color: var(--paie-color);
+}
+
+.event.recrutement {
+  background-color: var(--recrutement-color);
+}
+
+.event.rse {
+  background-color: var(--rse-color);
+}
+
+.event.veille-rh{
+  background-color: var(--veille-rh-color);
+}
+
+/* Plus d'événements */
+.more-events {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+/* Ajustements spécifiques si nécessaire */
+.bg-dark {
+  background-color: #2f2f2f !important;
+}
+
+.row > * {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#calendar-days .col {
+  border: 1px solid #ddd;
+  position: relative;
+  box-sizing: border-box; /* Assure que les bordures ne modifient pas la taille de la case */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 0.5rem;
+}
+
+.day-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-family: "Righteous", sans-serif;
+}
+
+.day-number{
+  font-size: 1.125rem;
+}
+
+.modal-content {
+  color: #2f2f2f;
+}
+
+#filters {
+  padding: 10px;
+}
+
+.filter-group {
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  cursor: pointer;
+}
+
+.filter-group input {
+  margin-right: 5px;
+}
+
+#calendar-days .col.disabled {
+  color: #666; /* Couleur gris clair pour indiquer que le jour est désactivé */
+  pointer-events: none; /* Désactive les clics sur les jours */
+  border: 1px solid #666;
+}
+
+.single-day {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 2px;
+  margin-inline: 15px;
+  width: fit-content;
+}
+
+/* Style pour les jours de week-end */
+.day.weekend:not(.day.today) {
+  background: rgba(250, 250, 250, 0.05); /* Une couleur de fond différente */
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/*boutons accordion*/
+
+.accordion-item{
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+
+.accordion-item .accordion-button{
+  transition-duration: .2s;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  font-weight: 600;
+  padding: .5rem;
+  border-radius: .5rem;
+  gap: .5rem;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  box-shadow: none;
+}
+
+.accordion-item:first-of-type .accordion-button{
+  border: 2px solid rgb(228, 10, 175);
+  color: rgb(255 255 255);
+  background-color: rgb(228 10 175);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.accordion-item:first-of-type .accordion-button.collapsed{
+  color: rgb(228, 10, 175);
+  background-color: transparent;
+}
+
+.accordion-item:first-of-type .accordion-button:hover, .accordion-item:first-of-type .accordion-button:active{
+  color: rgb(255 255 255);
+  background-color: rgb(228 10 175);
+}
+
+.accordion-item:nth-child(2) .accordion-button{
+  border: 2px solid rgb(49 187 253);
+  color: rgb(255 255 255);
+  background-color: rgb(49 187 253);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+
+}
+
+.accordion-item:nth-child(2) .accordion-button.collapsed{
+  color: rgb(49 187 253);
+  background-color: transparent;
+  border: 2px solid rgb(49 187 253);
+}
+
+.accordion-item:nth-child(2) .accordion-button:hover, .accordion-item:nth-child(2) .accordion-button:active{
+  color: rgb(255 255 255);
+  background-color: rgb(49 187 253);
+}
+
+.accordion-item:nth-child(3) .accordion-button{
+  border: 2px solid rgb(0 234 178);
+  color: rgb(255 255 255);
+  background-color: rgb(0 234 178);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.accordion-item:nth-child(3) .accordion-button.collapsed{
+  color: rgb(0 234 178) ;
+  background-color: transparent;
+  border: 2px solid rgb(0 234 178);
+}
+
+.accordion-item:nth-child(3) .accordion-button:hover, .accordion-item:nth-child(3) .accordion-button:active{
+  color: rgb(39, 39, 39);
+  background-color: rgb(0 234 178);
+  border: 2px solid rgb(0 234 178);
+}
+
+.accordion-item:last-of-type .accordion-button, .accordion-item:last-of-type .accordion-button.collapsed{
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.accordion-button:not(.collapsed)::after, .accordion-button.collapsed::after {
+  background-image: none;
+}
+
+.accordion-item .accordion-button::before{
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg class='w-4' viewBox='0 0 12 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1H1' stroke='%23fff' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.accordion-item:nth-child(2) .accordion-button.collapsed::before{
+  background-image: url("data:image/svg+xml,%3Csvg class='w-4' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V11M11 6H1' stroke='%2331bbfd' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.accordion-item:nth-child(3) .accordion-button.collapsed::before{
+  background-image: url("data:image/svg+xml,%3Csvg class='w-4' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V11M11 6H1' stroke='%2300eab2' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.accordion-item:nth-child(3) .accordion-button.collapsed:hover::before{
+  background-image: url("data:image/svg+xml,%3Csvg class='w-4' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V11M11 6H1' stroke='%23272727' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.accordion-item:nth-child(3) .accordion-button:hover::before{
+  background-image: url("data:image/svg+xml,%3Csvg class='w-4' viewBox='0 0 12 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1H1' stroke='%23272727' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.accordion-button.collapsed::before{
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V11M11 6H1' stroke='%23e40aae' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.accordion-item .accordion-button.collapsed:hover::before{
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V11M11 6H1' stroke='%23fff' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.accordion-button svg{
+  width: 1rem;
+}
+
+.cta-pills-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border: 1px solid white;
+  border-radius: 9999px;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: white;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+}
+
+
+.cta-pills-outline:hover {
+  background-color: #272727;
+}
+
+.side-buttons{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 1rem;
+  width: 8rem;
+  border-radius: 1rem;
+}
+
+.side-buttons a{
+  font-weight: 600;
+  border-radius: .75rem;
+  width: 7rem;
+  /*height: 100%;*/
+  border: 1px solid transparent;
+  color: #272727;
+  font-size: .75rem;
+}
+
+.side-buttons a i{
+  font-size: 2rem;
+}
+
+.side-buttons a:hover{
+  border-color: #272727;
+}
+
+.modal-header{
+  border-bottom: none;
+}
+
+span.avantages-salaries{
+  background-color: var(--avantages-salaries-color);
+}
+
+span.bien-etre{
+  background-color: var(--bien-etre-color);
+}
+
+span.espace{
+  background-color: var(--espace);
+}
+
+span.formation{
+  background-color: var(--formation-color);
+}
+
+span.juridique{
+  background-color: var(--juridique-color);
+}
+
+span.paie{
+  background-color: var(--paie-color);
+}
+
+span.recrutement{
+  background-color: var(--recrutement-color);
+}
+
+span.rse{
+  background-color: var(--rse-color);
+}
+
+span.veille-rh{
+  background-color: var(--veille-rh-color);
+}
+
+span.all-companies, span.more-50, span.less-50{
+  background-color: var(--entreprise-color)
+}
+
+span.all-events, span.obligatoire, span.conseil, span.actualites{
+  background-color: var(--events-color);
+}
+
+#allEventsBlock{
+  position: absolute;
+  top: 97%;
+  left: 33%;
+  background-color: rgb(39, 39, 39);
+  border-radius: .75rem;
+  padding: 1.5rem;
+  color: white;
+  width: max-content;
+  z-index: 1000;
+}
+
+#allEventsBlock:before {
+  content: "";
+  position: absolute;
+  left: 26px;
+  top: -26px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-left: 13px solid transparent;
+  border-bottom: 13px solid rgb(39, 39, 39);
+}
