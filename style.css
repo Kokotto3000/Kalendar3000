@@ -289,14 +289,17 @@ input[type=checkbox] {
 
 .event.espace{
   background-color: var(--espace-color);
+  color: #272727;
 }
 
 .event.formation {
   background-color: var(--formation-color);
+  color: #272727
 }
 
 .event.juridique {
   background-color: var(--juridique-color);
+  color: #272727;
 }
 
 .event.paie{
@@ -313,6 +316,7 @@ input[type=checkbox] {
 
 .event.rse {
   background-color: var(--rse-color);
+  color: #272727;
 }
 
 .event.veille-rh{
@@ -331,6 +335,13 @@ input[type=checkbox] {
   font-weight: bold;
   border-radius: 50%;
   font-size: 20px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.more-events:hover, .more-events.active{
+  background-color: #fff;
+  color: #000;
 }
 
 /* Ajustements spécifiques si nécessaire */
@@ -573,21 +584,24 @@ input[type=checkbox] {
   border-radius: 1rem;
 }
 
-.side-buttons a{
+.side-buttons a, #read-button a{
   font-weight: 600;
   border-radius: .75rem;
   width: 7rem;
-  /*height: 100%;*/
   border: 1px solid transparent;
   color: #272727;
   font-size: .75rem;
 }
 
-.side-buttons a i{
+.side-buttons a i, #read-button a i{
   font-size: 2rem;
 }
 
-.side-buttons a:hover{
+#read-button a i{
+  font-size: 1.5rem;
+}
+
+.side-buttons a:hover, #read-button a:hover{
   border-color: #272727;
 }
 
@@ -604,15 +618,18 @@ span.bien-etre{
 }
 
 span.espace{
-  background-color: var(--espace);
+  background-color: var(--espace-color);
+  color: #272727;
 }
 
 span.formation{
   background-color: var(--formation-color);
+  color: #272727;
 }
 
 span.juridique{
   background-color: var(--juridique-color);
+  color: #272727;
 }
 
 span.paie{
@@ -625,6 +642,7 @@ span.recrutement{
 
 span.rse{
   background-color: var(--rse-color);
+  color: #272727;
 }
 
 span.veille-rh{
@@ -637,6 +655,7 @@ span.all-companies, span.more-50, span.less-50{
 
 span.all-events, span.obligatoire, span.conseil, span.actualites{
   background-color: var(--events-color);
+  color: #272727;
 }
 
 #allEventsBlock{

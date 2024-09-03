@@ -111,7 +111,7 @@
                         </div>
                       </div>
                 </div>
-                <a class="cta-pills-outline self-center" target="_blank" href="#"><i class="fa-solid fa-circle-info"></i> En savoir plus sur ...</a>
+                <a class="cta-pills-outline self-center" target="_blank" href="#"><i class="fa-solid fa-circle-info"></i> En savoir plus</a>
             </div>
       
             <!-- Calendar -->
@@ -141,6 +141,10 @@
                     <div id="calendar-days" class="row">
                     <!-- Les jours du calendrier seront rendus ici -->
                     </div>
+
+                    <div class="d-flex justify-content-end w-100 mt-3">
+                        <a href="#"><img src="./img/cegid-logo-grey.svg" alt="logo cegid" class="img-fluid modal-logo"></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,28 +154,33 @@
             <div class="modal-dialog modal-dialog-scrollable position-relative modal-lg">
                 <div class="modal-content overflow-visible">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="eventModalLabel"><i class="fa-solid fa-calendar-days"></i> Premier dimanche du mois</h5>
+                    <h5 class="modal-title" id="eventModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <img class="img-fluid" src="https://picsum.photos/800/400?random=1" alt="image d'illustration">
+                        <img id="modal-img" class="img-fluid" src="" alt="image d'illustration">
                         
                         <div id="eventType" class="d-flex align-items-center gap-1 py-3"></div>
                         <!--<p id="eventDates"></p>-->
                         <h3 id="eventName"></h3>
                         <div id="eventDescription"></div>
 
-                        <div class="d-flex justify-content-end">
-                            <img src="./img/cegid-logo-blue.svg" alt="logo cegid" class="img-fluid modal-logo">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div id="read-button"></div>
+
+                            <a href="#"><img src="./img/cegid-logo-blue.svg" alt="logo cegid" class="img-fluid modal-logo"></a>
                         </div>
+
+                       
+
+                        <!--<div class="d-flex justify-content-end">
+                                <img src="./img/cegid-logo-blue.svg" alt="logo cegid" class="img-fluid modal-logo">
+                            </div>-->
+
+                        
                     </div>
-                    <!--<div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                    </div>-->
-                    <aside class="static mb-5 d-flex align-items-center gap-4 flex-column justify-content-center bg-white py-4 side-buttons">
-                        <a class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center lg:hover:border-black lg:hover:bg-white"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
-                        <a href="https://thedaily.swile.co/ikigai-job-parfait?utm_campaign=calendrier_RH_2024&amp;utm_medium=calendrier_RH&amp;utm_source=demand_gen" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center lg:hover:border-black lg:hover:bg-white"><i class="fa-regular fa-newspaper"></i><p class="hidden text-xs leading-none lg:inline">Lire l'article entier</p></a>
-                    </aside>
+                    
+                    <aside id="side-buttons" class="static mb-5 d-flex align-items-center gap-4 flex-column justify-content-center bg-white py-4 side-buttons"></aside>
                 </div>
                 
             </div>
