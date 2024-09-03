@@ -18,7 +18,7 @@
         "description": "<p>Sensibilisez vos managers et vos salariés sur la nécessité qu'ils déconnectent totalement pendant leurs vacances et qu'ils laissent leur équipe déconnecter.</p><p>Objectif : des salariés bien reposés pour une rentrée au top !</p>",
         "type": ["juridique", "all-companies", "obligatoire"],
         "recurrence": "Avant les grands départs en congés",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=2",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "pdf",
         "url": "https://www.kanoon.fr/guides-swile/droit-a-la-deconnexion-des-salaries"
@@ -30,7 +30,7 @@
         "description": "<p>Chaque 1er dimanche du mois, plongez dans un sujet croustillant pour relâcher la pression et nourrir votre culture G.</p><p>La période estivale est propice à la réflexion : idéal pour vous parler de la méthode Ikigai, un diagramme japonais pour savoir si vous faites le bon job :</p><ul><li>Ce pour quoi vous êtes payé</li><li>Ce pour quoi vous êtes doué</li><li>Ce que vous aimez</li><li>Ce dont le monde a besoin</li></ul>",
         "type": ["veille-rh", "all-companies", "conseil"],
         "recurrence": "Premier dimanche du mois",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=3",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "pdf",
         "url": "#"
@@ -42,7 +42,7 @@
         "description": "<p>Vos collaborateurs ne sont pas TOUS en congés ?</p><p>Et si vous incitiez les survivants à parcourir des contenus de formation pendant cette période d’activité plus calme ?</p><p>Une bonne façon d’animer votre offre simplement.</p>",
         "type": ["formation", "all-companies", "conseil"],
         "recurrence": "Tout l'été",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=4",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "video",
         "url": "https://app.livestorm.co/edflex/formation-lete-comment-continuer-dengager-vos-apprenants"
@@ -54,7 +54,7 @@
         "description": "<p>Si les premières impressions sont importantes, les dernières le sont tout autant…</p><p>Quand un salarié quitte l’entreprise, ce n’est pas sans impact sur le reste des équipes.</p><p>Dans ce guide, moka.care et HeyTeam ont rassemblé les meilleurs conseils de leurs experts pour vous aider à mettre en place les bonnes actions pour l'offboarding de vos collaborateurs.</p>",
         "type": ["bien-etre", "all-companies", "conseil"],
         "recurrence": "À tout moment",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=5",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "pdf",
         "url": "https://www.moka.care/offboarding-livre-blanc"
@@ -66,7 +66,7 @@
         "description": "<p>Le concept du bureau opéré révolutionne l’offre immobilière des bureaux. Au lieu de louer un local professionnel afin d’y créer des bureaux traditionnels, vous louez un espace de travail indépendant où des services et des installations sont gérés par des tiers pour offrir aux entreprises une flexibilité accrue et une optimisation des ressources immobilières.</p><p>Découvrez ses avantages, ses différences avec les autres types de bureaux et son coût.</p>",
         "type": ["espace", "all-companies", "conseil"],
         "recurrence": "Tout le mois",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=6",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "article",
         "url": "https://www.deskeo.com/fr/blog/conseils/quest-ce-que-le-bureau-opere/?utm_source=swile&utm_medium=referral&utm_id=calendrier_rh_2024"
@@ -78,7 +78,7 @@
         "description": "<p>Si le Code du travail prévoit 11 jours fériés en France, ces derniers ne sont pas obligatoirement des jours de repos pour vos salariés.</p><p>Il est donc primordial de communiquer en interne sur les dispositions prévues par votre entreprise ou votre convention collective à ce sujet.</p>",
         "type": ["paie", "all-companies", "conseil"],
         "recurrence": "Toute l'année",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=7",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "article",
         "url": "https://payfit.com/fr/fiches-pratiques/travail-jour-ferie/?utm_source=swile&utm_medium=affiliate&utm_campaign=FR_Affiliate"
@@ -90,7 +90,7 @@
         "description": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p><ul><li>Possimus nesciunt libero,</li><li>explicabo voluptatem minima porro</li></ul><p>nemo cumque veritatis deserunt voluptatum impedit adipisci in unde molestiae debitis, fuga excepturi accusamus reprehenderit!</p>",
         "type": ["recrutement", "all-companies", "conseil"],
         "recurrence": "Toute l'année",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=7",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "article",
         "url": "https://www.yaggo.co/blog/entretiens-et-cinema-cliches-realite/"
@@ -102,7 +102,7 @@
         "description": "<p>Sensibilisez vos managers et vos salariés sur la nécessité qu'ils déconnectent totalement pendant leurs vacances et qu'ils laissent leur équipe déconnecter.</p><p>Objectif : des salariés bien reposés pour une rentrée au top !</p>",
         "type": ["juridique", "all-companies", "obligatoire"],
         "recurrence": "Avant les grands départs en congés",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=6",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "pdf",
         "url": "https://www.kanoon.fr/guides-swile/droit-a-la-deconnexion-des-salaries"
@@ -114,7 +114,7 @@
         "description": "<p>Chaque 1er dimanche du mois, plongez dans un sujet croustillant pour relâcher la pression et nourrir votre culture G.</p><p>La période estivale est propice à la réflexion : idéal pour vous parler de la méthode Ikigai, un diagramme japonais pour savoir si vous faites le bon job :</p><ul><li>Ce pour quoi vous êtes payé</li><li>Ce pour quoi vous êtes doué</li><li>Ce que vous aimez</li><li>Ce dont le monde a besoin</li></ul>",
         "type": ["veille-rh", "all-companies", "conseil"],
         "recurrence": "Premier dimanche du mois",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=5",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "pdf",
         "url": "#"
@@ -126,7 +126,7 @@
         "description": "<p>Vos collaborateurs ne sont pas TOUS en congés ?</p><p>Et si vous incitiez les survivants à parcourir des contenus de formation pendant cette période d’activité plus calme ?</p><p>Une bonne façon d’animer votre offre simplement.</p>",
         "type": ["formation", "all-companies", "conseil"],
         "recurrence": "Tout l'été",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=4",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "video",
         "url": "https://app.livestorm.co/edflex/formation-lete-comment-continuer-dengager-vos-apprenants"
@@ -138,7 +138,7 @@
         "description": "<p>Si les premières impressions sont importantes, les dernières le sont tout autant…</p><p>Quand un salarié quitte l’entreprise, ce n’est pas sans impact sur le reste des équipes.</p><p>Dans ce guide, moka.care et HeyTeam ont rassemblé les meilleurs conseils de leurs experts pour vous aider à mettre en place les bonnes actions pour l'offboarding de vos collaborateurs.</p>",
         "type": ["bien-etre", "all-companies", "conseil"],
         "recurrence": "À tout moment",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=3",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "pdf",
         "url": "https://www.moka.care/offboarding-livre-blanc"
@@ -162,7 +162,7 @@
         "description": "<p>Si le Code du travail prévoit 11 jours fériés en France, ces derniers ne sont pas obligatoirement des jours de repos pour vos salariés.</p><p>Il est donc primordial de communiquer en interne sur les dispositions prévues par votre entreprise ou votre convention collective à ce sujet.</p>",
         "type": ["paie", "all-companies", "conseil"],
         "recurrence": "Toute l'année",
-        "image": "https://picsum.photos/800/400?random=1",
+        "image": "https://picsum.photos/800/400?random=2",
         "logo": "./img/cegid-logo-blue.svg",
         "format": "article",
         "url": "https://payfit.com/fr/fiches-pratiques/travail-jour-ferie/?utm_source=swile&utm_medium=affiliate&utm_campaign=FR_Affiliate"
