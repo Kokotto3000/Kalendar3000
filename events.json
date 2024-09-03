@@ -36,7 +36,7 @@
         "url": "#"
     },
     {
-        "name": "Déjeuner",
+        "name": "Formation pendant l'été",
         "titreComplet": "Se former sous les palmiers",
         "date": "2024-08-05T00:00:00.000Z",
         "description": "<p>Vos collaborateurs ne sont pas TOUS en congés ?</p><p>Et si vous incitiez les survivants à parcourir des contenus de formation pendant cette période d’activité plus calme ?</p><p>Une bonne façon d’animer votre offre simplement.</p>",
@@ -166,5 +166,125 @@
         "logo": "./img/cegid-logo-blue.svg",
         "format": "article",
         "url": "https://payfit.com/fr/fiches-pratiques/travail-jour-ferie/?utm_source=swile&utm_medium=affiliate&utm_campaign=FR_Affiliate"
+    },
+    {
+        "name": "Onboarding",
+        "titreComplet": "Anticipation de l’arrivée de vos nouvelles recrues",
+        "date": "2024-09-05T00:00:00.000Z",
+        "description": "<p>Vous avez trouvé la perle rare, félicitations ! Afin que l’embauche soit réussie à la fois légalement et techniquement, différentes formalités sont à respecter.</p><p>Suivez le guide !</p>",
+        "type": ["paie", "all-companies", "obligatoire"],
+        "recurrence": "Toute l'année",
+        "image": "https://picsum.photos/800/400?random=8",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "pdf",
+        "url": "https://payfit.com/fr/boite-a-outils-recruter-vite-et-bien-sans-rh/?utm_source=swile&utm_medium=affiliate&utm_campaign=FR_Affiliate"
+    },
+    {
+        "name": "Intégrer vos nouveaux collaborateurs",
+        "titreComplet": "Onboarding : Intégrez vos collaborateurs en prenant soin de leur bien-être mental",
+        "date": "2024-09-02T00:00:00.000Z",
+        "description": "<p>1 salarié sur 2 est prêt à démissionner dans le mois suivant son embauche.</p><p>L’onboarding est donc une étape décisive dans l'engagement et la fidélisation de vos collaborateurs !</p>Et 7000€ : c’est le coût d’un onboarding raté.</p><p>Dans ce guide, moka.care et HeyTeam ont rassemblé les meilleurs conseils de leurs experts pour vous aider à mettre en place les bonnes actions pour l'onboarding de vos collaborateurs et prendre soin de leur bien-être mental dès leur arrivée.</p>",
+        "type": ["bien-etre", "all-companies", "conseil"],
+        "recurrence": "À tout moment",
+        "image": "https://picsum.photos/800/400?random=8",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "pdf",
+        "url": "https://www.moka.care/onboarding-et-sante-mentale"
+    },
+    {
+        "name": "Rentrée formation",
+        "titreComplet": "Faites votre rentrée formation",
+        "date": "2024-09-02T00:00:00.000Z",
+        "description": "<p>Les congés sont terminés ! Toutes les bonnes choses ont une fin… C’est le moment idéal pour relancer la communication autour de votre offre de formation pour présenter vos nouveaux outils et faire le rappel des bonnes pratiques avant la fin de l’année.</p>",
+        "type": ["formation", "all-companies", "conseil"],
+        "recurrence": "Tout le mois",
+        "image": "https://picsum.photos/800/400?random=3",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "article",
+        "url": "https://www.edflex.com/blog/preparez-votre-rentree-et-adoptez-une-learning-routine"
+    },
+    {
+        "name": "La minute culture",
+        "titreComplet": "Ragots et rumeurs : pourquoi aime-t-on autant les commérages au bureau ?",
+        "date": "2024-09-01T00:00:00.000Z",
+        "description": "<p>Chaque 1er dimanche du mois, plongez dans un sujet croustillant pour relâcher la pression et nourrir votre culture G.</p><p>La rentrée rime souvent avec les retrouvailles avec les collègues. Et il y a un sujet de discussion qui attire les foules : les ragots, les rumeurs, les commérages. Pourquoi les aime-t-on autant ? Comment faire pour les contrer (ou du moins, les contrôler) ? Explication avec une spécialiste de la rumeur, Aurore Van de Winkel.</p>",
+        "type": ["veille-rh", "all-companies", "conseil"],
+        "recurrence": "Premier dimanche du mois",
+        "image": "https://picsum.photos/800/400?random=1",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "article",
+        "url": "https://thedaily.swile.co/ragots-rumeurs-bitcher-travail?pk_campaign=calendrier_RH_2024&pk_source=demand_gen&pk_medium=calendrier_RH&pk_vid=e2b8df1855702ef21725374580c139a6"
+    },
+    {
+        "name": "L'écologie au travail",
+        "titreComplet": "Comment être plus écolo au bureau ?",
+        "date": "2024-09-09T00:00:00.000Z",
+        "description": "<p>L’environnement est l’affaire de tous, partout, tous les jours.</p><p>Pour trouver un nouvel équilibre plus écologique au bureau et favoriser le développement durable au sein de l’entreprise, l’impulsion doit venir de l’équipe dirigeante. Investissements plus responsables, choix de partenaires respectueux de l’environnement, communication interne…</p><p>Découvrez 3 conseils à mettre en place dès aujourd’hui.</p>",
+        "type": ["espace", "all-companies", "conseil"],
+        "recurrence": "Tout le mois",
+        "image": "https://picsum.photos/800/400?random=7",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "article",
+        "url": "https://www.deskeo.com/fr/blog/impact/ecolo-au-bureau/?utm_source=swile&utm_medium=referral&utm_id=calendrier_rh_2024"
+    },
+    {
+        "name": "Journée mondiale transport",
+        "titreComplet": "La journée mondiale du transport public",
+        "date": "2024-09-20T00:00:00.000Z",
+        "description": "<p>&laquo;On a connu mieux comme journée mondiale&raquo;, c'est sûrement ce que vous pensez… Pas si vite !</p><p>Car en ce jour si particulier placé sous le signe des transports, on vous offre un modèle prêt à l'emploi pour concocter votre politique de voyage comme un chef.</p><p>Pratique si vous avez des collaborateurs souvent en déplacement, ou si vous voulez mettre en place un processus comme sur des roulettes.</p>",
+        "type": ["avantages-salaries", "all-companies", "conseil"],
+        "recurrence": "20/09/2024",
+        "image": "https://picsum.photos/800/400?random=3",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "pdf",
+        "url": "https://get.swile.co/fr/voyage-affaires/modele-politique-voyage-entreprise-pve?pk_vid=e2b8df1855702ef21725374991c139a6"
+    },
+    {
+        "name": "Semaine Européenne du Développement Durable",
+        "titreComplet": "Semaine Européenne du Développement Durable (SEDD) ",
+        "date": "2024-09-16T00:00:00.000Z",
+        "description": "<p>3 semaines pour sensibiliser sur les ODD (Objectifs de Développement Durable) !</p><p>Vous pouvez par exemple :</p><ul><li>Réaliser une Fresque du climat</li><li>Lancer une compétition de défis écologiques avec Ma Petite Planète</li><li>Faire un atelier de mise en pot pour un apiculteur avec Laafi</li>Participer à une collecte de déchets avec Cleanwalk</li><li>Participer à un atelier 2tonnes</li></ul>",
+        "type": ["rse", "all-companies", "actualites"],
+        "recurrence": "Du 16 septembre au 8 octobre 2024",
+        "image": "https://picsum.photos/800/400?random=5",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "article",
+        "url": "https://www.vendredi.cc/ressources-articles/semaine-europeenne-du-developpement-durable-5-idees-dactions-a-faire-en-entreprise?utm_campaign=Calendrier%20Swile&utm_source=referral&utm_medium=calendrier-RH"
+    },
+    {
+        "name": "Le coût d'un recrutement",
+        "titreComplet": "Calculez et comparez vos coûts de recrutement.",
+        "date": "2024-09-11T00:00:00.000Z",
+        "description": "<p>Nous avons créé ce calculateur qui va vous permettre de chiffrer précisément le coût d’un recrutement au sein de votre entreprise.</p>",
+        "type": ["recrutement", "all-companies", "conseil"],
+        "recurrence": "Toute l'année",
+        "image": "https://picsum.photos/800/400?random=2",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "article",
+        "url": "https://bit.ly/3Guv9q6"
+    },
+    {
+        "name": "Entretiens professionnels",
+        "titreComplet": "Tenir les entretiens professionnels",
+        "date": "2024-09-03T00:00:00.000Z",
+        "description": "<p>L'entretien professionnel est obligatoire tous les 2 ans. Il permet d'échanger sur les perspectives d'évolution du salarié et ses besoins en matière de formation. Le compte rendu d'entretien doit être écrit et conservé précieusement.</p>",
+        "type": ["juridique", "all-companies", "obligatoire"],
+        "recurrence": "Tous les 2 ans après l'embauche ou le dernier entretien pro",
+        "image": "https://picsum.photos/800/400?random=4",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "pdf",
+        "url": "https://kanoon.fr/guides-swile/tenir-lentretien-professionnel"
+    },
+    {
+        "name": "Semaine de la finance responsable",
+        "titreComplet": "Semaine de la finance responsable : quel rôle l’entreprise peut-elle jouer ?",
+        "date": "2024-09-30T00:00:00.000Z",
+        "description": "<p>L’impact des produits financiers sur l’environnement et la société est considérable. Au niveau de l’entreprise, vous avez également le pouvoir d’agir !</p><ul><li>Par exemple, votre dispositif d’épargne salariale et retraite est-il responsable ?</li><li>Labels, Règlementation SFDR, quels supports d'investissement intègrent et répondent aux mieux aux enjeux environnementaux ?‍</li></ul><p>Au travers de notre étude portant sur plus de 800 fonds français, identifiez les supports de placement les plus impliqués dans la transition écologique mais aussi les caractéristiques d’un fond engagé et responsable.</p><p>Découvrez où est vraiment investie votre épargne. Des indicateurs inédits pour faire un choix éclairé.</p>",
+        "type": ["avantages-salaries", "all-companies", "actualites"],
+        "recurrence": "30/09/2024",
+        "image": "https://picsum.photos/800/400?random=9",
+        "logo": "./img/cegid-logo-blue.svg",
+        "format": "pdf",
+        "url": "https://www.epsor.fr/telechargement/etude-epargne-responsable?utm_medium=livre_blanc&utm_content=&utm_campaign=epargne_responsable_2024&utm_source=calendrier_swile"
     }
 ]
