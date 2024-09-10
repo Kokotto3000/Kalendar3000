@@ -1,4 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: "Gelion";
+  src:
+    local("Gelion"),
+    url("./font/gelion/gelion-regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gelion";
+  src:
+    local("Gelion"),
+    url("./font/gelion/gelion-black.ttf") format("truetype");
+    font-weight: 800;
+}
+
+@font-face {
+  font-family: "Gelion";
+  src: url("./font/gelion/gelion-bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Gelion";
+  src: url("./font/gelion/gelion-medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gelion";
+  src: url("./font/gelion/gelion-semibold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Gelion";
+  src: url("./font/gelion/gelion-light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Gelion";
+  src: url("./font/gelion/gelion-thin.ttf") format("truetype");
+  font-weight: 200;
+}
 
 :root{
   --avantages-salaries-color: rgb(165 28 241);
@@ -15,15 +59,22 @@
   --obligatoire-color: rgb(255 141 64);
   --conseil-color: rgb(255 218 25);
   --actualites-color: rgb(0 234 178);
-  --thematiques-color: rgb(228, 10, 175);
+  --thematiques-color: rgb(228 10 175);
   --events-color: rgb(0 234 178);
+  --title-color: rgb(0 70 254);
+  --main-color: rgb(0 44 82);
+  --secondary-color: rgb(255 255 255);
+  --accent-color: rgb(255 92 53);
+  --light-color: rgb(201 207 211);
+  --main-bg-color: rgb(255 255 255);
+  --font-family: "Gelion", sans-serif;
 }
 
 /* Styles généraux */
 body {
-  background: linear-gradient(0deg, #000, #272727);
-  color: #fff;
-  font-family: "Roboto Condensed", sans-serif;
+  background: var(--main-bg-color);
+  color: var(--main-color);
+  font-family: var(--font-family);
 }
 
 a{
@@ -31,6 +82,8 @@ a{
 }
 
 h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: 700;
   text-transform: capitalize;
 }
 
@@ -45,8 +98,8 @@ h1, h2, h3 {
 }
 
 .filter-section {
-  background-color: rgb(39, 39, 39);
-  border-radius: .75rem;
+  background-color: var(--main-bg-color);
+  /*border-radius: 16px;*/
 }
 
 .filter-category h4 {
@@ -66,7 +119,16 @@ input[type=checkbox] {
   height: 15px;
   width: 15px;
   /*background: transparent;*/
-  border: 1px solid white;
+  border: 1px solid var(--main-color);
+  border-radius: 16px;
+}
+
+label{
+  opacity: 0.5;
+}
+
+label:has(input:checked){
+  opacity: 1;
 }
 
 .filter-group {
@@ -212,23 +274,43 @@ input[type=checkbox] {
   margin-bottom: 20px;
 }
 
-/*.calendar-header h1 {
-    font-size: 2em;
-    color: #fff;
-}*/
+.btn.btn-outline-light{
+  border : 1px solid var(--accent-color);
+  border-radius: 50%;
+  /*border: none;*/
+  width: 55px;
+  height: 55px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI1LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhbHF1ZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0IDI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnIGlkPSJJY29uc194MkZfVWlfeDJGX0JvcmRlckxhcmdlX3gyRl9hcnJvdy1mb3J3YXJkIj4KCTxwb2x5Z29uIGlkPSJfeEQ4M0NfX3hERkE4Xy1JY29uLUZpbGwiIHN0eWxlPSJmaWxsOiNGRjVDMzU7IiBwb2ludHM9IjIxLjksMTIuNSAxMi4yLDIyLjIgMi41LDEyLjUgMy45LDExLjEgMTEuMiwxOC40IDExLjIsMS44IAoJCTEzLjIsMS44IDEzLjIsMTguNCAyMC41LDExLjEgCSIvPgo8L2c+Cjwvc3ZnPgo=);
+  background-color: var(--main-bg-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 31px;
+  border-radius: 50%;
+  transition: background-color .25s ease-out;
+  cursor: pointer;
+}
 
-.calendar-controls .btn {
-  color: #fff;
-  border: 1px solid #fff;
-  margin-left: 5px;
+#prev-month.btn.btn-outline-light{
+  transform: rotate(90deg);
+}
+
+#next-month.btn.btn-outline-light{
+  transform: rotate(-90deg);
+}
+
+.btn.btn-outline-light:hover {
+  background-color: var(--accent-color);
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI1LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhbHF1ZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0IDI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnIGlkPSJJY29uc194MkZfVWlfeDJGX0JvcmRlckxhcmdlX3gyRl9hcnJvdy1mb3J3YXJkIj4KCTxwb2x5Z29uIGlkPSJfeEQ4M0NfX3hERkE4Xy1JY29uLUZpbGwiIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjIxLjksMTIuNSAxMi4yLDIyLjIgMi41LDEyLjUgMy45LDExLjEgMTEuMiwxOC40IDExLjIsMS44IAoJCTEzLjIsMS44IDEzLjIsMTguNCAyMC41LDExLjEgCSIvPgo8L2c+Cjwvc3ZnPgo=);
 }
 
 .calendar {
   display: flex;
   flex-wrap: wrap;
-  background-image: linear-gradient(180deg, #000, #272727);
-  border-radius: 1.5rem;
+  /*background-image: linear-gradient(180deg, #000, var(--main-color));*/
+  background-color: white;
+  border-radius: 16px;
   padding: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
 }
 
 .calendar-title {
@@ -238,7 +320,7 @@ input[type=checkbox] {
 .day {
   width: 14.285%;
   min-height: 7.5rem;
-  border: 0.5px solid #444;
+  /*border: 0.5px solid #444;*/
   position: relative;
   display: flex;
   flex-direction: column;
@@ -252,8 +334,7 @@ input[type=checkbox] {
 }
 
 .day.today {
-  background-color: white;
-  color: black;
+  background-color: var(--light-color);
 }
 
 .eventsBlock {
@@ -269,12 +350,14 @@ input[type=checkbox] {
   line-height: 1rem;
   white-space: nowrap;
   margin-bottom: 0.25rem;
-  padding: 0.375rem 0.875rem;
+  padding: 10px 10px;
   cursor: pointer;
-  border-radius: 0.5rem;
+  border-radius: 16px;
   text-wrap: wrap;
   overflow: hidden;
   width: 100%;
+  /*word-break: break-all;*/
+  hyphens: auto;
 }
 
 .event.avantages-salaries{
@@ -287,17 +370,17 @@ input[type=checkbox] {
 
 .event.espace{
   background-color: var(--espace-color);
-  color: #272727;
+  color: var(--main-color);
 }
 
 .event.formation {
   background-color: var(--formation-color);
-  color: #272727
+  color: var(--main-color);
 }
 
 .event.juridique {
   background-color: var(--juridique-color);
-  color: #272727;
+  color: var(--main-color);
 }
 
 .event.paie{
@@ -314,7 +397,7 @@ input[type=checkbox] {
 
 .event.rse {
   background-color: var(--rse-color);
-  color: #272727;
+  color: var(--main-color);
 }
 
 .event.veille-rh{
@@ -353,7 +436,7 @@ input[type=checkbox] {
 }
 
 #calendar-days .col {
-  border: 1px solid #ddd;
+  border: .5px solid var(--light-color);
   position: relative;
   box-sizing: border-box; /* Assure que les bordures ne modifient pas la taille de la case */
   display: flex;
@@ -369,11 +452,12 @@ input[type=checkbox] {
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-size: .75rem;
-  font-family: "Righteous", sans-serif;
 }
 
 .day-number{
-  font-size: 1.125rem;
+  font-size: 21px;
+  font-weight: 200;
+  color: var(--accent-color);
 }
 
 .modal-content {
@@ -397,9 +481,10 @@ input[type=checkbox] {
 }
 
 #calendar-days .col.disabled {
-  color: #666; /* Couleur gris clair pour indiquer que le jour est désactivé */
+  /*color: #666;*/
   pointer-events: none; /* Désactive les clics sur les jours */
-  border: 1px solid #666;
+  /*border: 0.5px solid #666;*/
+  opacity: 0.5;
 }
 
 .single-day {
@@ -424,7 +509,7 @@ input[type=checkbox] {
 /*boutons accordion*/
 
 .accordion-item{
-  color: white;
+  color: var(--main-color);
   background-color: transparent;
   border: none;
 }
@@ -434,8 +519,8 @@ input[type=checkbox] {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   font-weight: 600;
-  padding: .5rem;
-  border-radius: .5rem;
+  padding: 16px;
+  border-radius: 16px;
   gap: .5rem;
   align-items: center;
   width: 100%;
@@ -444,29 +529,29 @@ input[type=checkbox] {
 }
 
 .accordion-item:first-of-type .accordion-button{
-  border: 2px solid rgb(228, 10, 175);
+  border: 1px solid var(--accent-color);
   color: rgb(255 255 255);
-  background-color: rgb(228 10 175);
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  background-color: var(--accent-color);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .accordion-item:first-of-type .accordion-button.collapsed{
-  color: rgb(228, 10, 175);
+  color: var(--accent-color);
   background-color: transparent;
 }
 
 .accordion-item:first-of-type .accordion-button:hover, .accordion-item:first-of-type .accordion-button:active{
   color: rgb(255 255 255);
-  background-color: rgb(228 10 175);
+  background-color: var(--accent-color);
 }
 
 .accordion-item:nth-child(2) .accordion-button{
   border: 2px solid rgb(49 187 253);
   color: rgb(255 255 255);
   background-color: rgb(49 187 253);
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 
 }
 
@@ -485,8 +570,8 @@ input[type=checkbox] {
   border: 2px solid rgb(0 234 178);
   color: rgb(255 255 255);
   background-color: rgb(0 234 178);
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .accordion-item:nth-child(3) .accordion-button.collapsed{
@@ -502,8 +587,8 @@ input[type=checkbox] {
 }
 
 .accordion-item:last-of-type .accordion-button, .accordion-item:last-of-type .accordion-button.collapsed{
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 
 .accordion-button:not(.collapsed)::after, .accordion-button.collapsed::after {
@@ -540,7 +625,7 @@ input[type=checkbox] {
   width: 1rem;
   height: 1rem;
   content: "";
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V11M11 6H1' stroke='%23e40aae' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V11M11 6H1' stroke='%23ff5c35' stroke-width='1.16667' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .accordion-item .accordion-button.collapsed:hover::before{
@@ -570,7 +655,7 @@ input[type=checkbox] {
 
 
 .cta-pills-outline:hover {
-  background-color: #272727;
+  background-color: var(--main-color);
 }
 
 .side-buttons{
@@ -587,13 +672,13 @@ input[type=checkbox] {
   border-radius: .75rem;
   width: 7rem;
   border: 1px solid transparent;
-  color: #272727;
+  color: var(--main-color);
   font-size: .75rem;
   transition: all 200ms ease-in-out;
 }
 
 #read-button a{
-  border: 1px solid #272727;
+  border: 1px solid var(--main-color);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -606,12 +691,12 @@ input[type=checkbox] {
 }
 
 .side-buttons a:hover{
-  border-color: #272727;
+  border-color: var(--main-color);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 #read-button a:hover{
-  background-color: #272727;
+  background-color: var(--main-color);
   color: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -631,17 +716,17 @@ span.bien-etre{
 
 span.espace{
   background-color: var(--espace-color);
-  color: #272727;
+  color: var(--main-color);
 }
 
 span.formation{
   background-color: var(--formation-color);
-  color: #272727;
+  color: var(--main-color);
 }
 
 span.juridique{
   background-color: var(--juridique-color);
-  color: #272727;
+  color: var(--main-color);
 }
 
 span.paie{
@@ -654,7 +739,7 @@ span.recrutement{
 
 span.rse{
   background-color: var(--rse-color);
-  color: #272727;
+  color: var(--main-color);
 }
 
 span.veille-rh{
@@ -667,14 +752,14 @@ span.all-companies, span.more-50, span.less-50{
 
 span.all-events, span.obligatoire, span.conseil, span.actualites{
   background-color: var(--events-color);
-  color: #272727;
+  color: var(--main-color);
 }
 
 #allEventsBlock{
   position: absolute;
   top: 97%;
   left: 33%;
-  background-color: rgb(39, 39, 39);
+  background-color: var(--main-color);
   border-radius: .75rem;
   padding: 1.5rem;
   color: white;
@@ -693,4 +778,75 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   border-right: 13px solid transparent;
   border-left: 13px solid transparent;
   border-bottom: 13px solid rgb(39, 39, 39);
+}
+
+.day-button{
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 992px) {
+  .event:not(#allEventsBlock .event){
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    font-size: 0;
+    padding: 0;
+  }
+
+  .eventsBlock {
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+
+  .day-title {
+    justify-content: center;
+  }
+
+  .day-label{
+    display: none;
+  }
+
+  #calendar-days .col,  #calendar-days .col.disabled{
+    border: none;
+  }
+
+  .day.weekend:not(.day.today) {
+    background: transparent; /* Une couleur de fond différente */
+  }
+
+  #calendar-days{
+    background-image: linear-gradient(180deg,#000,#272727);
+    padding: 1rem;
+    border-radius: 1.5rem;
+    row-gap: 1rem;
+    column-gap: 2vw;
+  }
+
+  .calendar{
+    background-image: none;
+  }
+
+  .day {
+    min-height: 0;
+    border-radius: .5rem;
+  }
+
+  #allEventsBlock{
+    position: static;
+    top: 0;
+    left: 0;
+    background-color: rgb(39, 39, 39);
+    border-radius: .75rem;
+    padding: 1.5rem;
+    color: white;
+    width: 100%;
+    z-index: 1000;
+    margin-top: 3rem;
+  }
+  
+  #allEventsBlock:before {
+    display: none;
+  }
 }

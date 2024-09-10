@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextMonthButton = document.getElementById('next-month');
     const filterInputs = document.querySelectorAll('.event-filter'); // Sélecteurs pour les filtres
     const dropdownMenu = document.querySelector('.dropdown-menu');
-    //const accordionButton = document.querySelectorAll('.accordion button');
+    const allEventsMobile= document.getElementById('all-events-mobile');
 
     let currentDate = new Date();
     let activeFilters = []; // Utilisé pour stocker les types de filtres activés
@@ -169,6 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour afficher le calendrier
     function renderCalendar() {
+        //vérifier si je ne dois pas faire un resize qqpart...
+        const width = window.innerWidth;
+        console.log(width);
         const month = currentDate.getMonth();
         const year = currentDate.getFullYear();
     
@@ -194,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // Remplit les cases pour les jours du mois précédent
         const prevMonthDays = new Date(year, month, 0).getDate(); // Nombre de jours dans le mois précédent
+
         for (let i = startDay - 1; i >= 0; i--) {
             const dayElement = document.createElement('div');
             dayElement.classList.add('col', 'disabled'); // Ajoute la classe "disabled"
@@ -234,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dayElement.appendChild(dayTitle);
     
             const dayNumber = document.createElement('div');
-            dayNumber.textContent = day;
+            dayNumber.textContent = (day<10 ? '0' : '') + day;
             dayNumber.classList.add('day-number');
             dayTitle.appendChild(dayNumber);
     
@@ -248,59 +252,115 @@ document.addEventListener('DOMContentLoaded', function() {
             if (day === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
                 dayElement.classList.add('today');
             }
+
+
     
+            
+    
+            // Obtient les événements pour le jour actuel
+            const events = getSimulatedEvents(day, month, year);
+
             // Ajoute un conteneur pour les événements du jour
             const eventsBlock = document.createElement('div');
             eventsBlock.classList.add('eventsBlock');
             dayElement.appendChild(eventsBlock);
-    
-            // Obtient les événements pour le jour actuel
-            const events = getSimulatedEvents(day, month, year);
-    
-            // Limite le nombre d'événements affichés à 3
-            const displayedEvents = events.slice(0, 2);
-    
-            displayedEvents.forEach(event => {
-                console.log(event);
-                // Crée un élément pour l'événement
-                const eventElement = document.createElement('div');
-                eventElement.textContent = event.name;
-                event.type.forEach(type => eventElement.classList.add('event', type));
-                eventElement.classList.add('event');
 
-                addingModal(event, eventElement);
-    
-                eventsBlock.appendChild(eventElement);
-            });
-    
-            // Ajoute un bouton "+" si plus de 2 événements
-            if (events.length > 2) {
-                const moreEventsButton = document.createElement('div');
-                moreEventsButton.classList.add('more-events');
-                moreEventsButton.innerHTML = '<i class="fa-solid fa-plus"></i>';
+            
 
-                eventsBlock.appendChild(moreEventsButton);
+            if(width>=992){
 
-                let moreEventsOpen = false;
+                // Limite le nombre d'événements affichés à 3
+                const displayedEvents = events.slice(0, 2);
+        
+                displayedEvents.forEach(event => {
+                    // Crée un élément pour l'événement
+                    const eventElement = document.createElement('div');
+                    eventElement.textContent = event.name;
+                    event.type.forEach(type => eventElement.classList.add('event', type));
+                    eventElement.classList.add('event');
+
+                    addingModal(event, eventElement);
+        
+                    eventsBlock.appendChild(eventElement);
+                });
+        
+                // Ajoute un bouton "+" si plus de 2 événements
+                if (events.length > 2) {
+                    const moreEventsButton = document.createElement('div');
+                    moreEventsButton.classList.add('more-events');
+                    moreEventsButton.innerHTML = '<i class="fa-solid fa-plus"></i>';
+
+                    eventsBlock.appendChild(moreEventsButton);
+
+                    let moreEventsOpen = false;
+
+                    const allEventsBlock = document.createElement('div');
+                    allEventsBlock.id = 'allEventsBlock';
+                    
+                    // Ajouter le gestionnaire de clic pour afficher tous les événements dans un bloc sous le calendrier
+                    moreEventsButton.addEventListener('click', ()=> {
+                        if(!moreEventsOpen) {
+                            moreEventsOpen= true;
+                            moreEventsButton.innerHTML = '<i class="fa-solid fa-minus"></i>';
+                            moreEventsButton.classList.add('active');
+                            eventsBlock.appendChild(allEventsBlock);
+                            displayAllEventsForDay(day, month, year);
+                        } 
+                        else{
+                            moreEventsOpen= false;
+                            moreEventsButton.innerHTML = '<i class="fa-solid fa-plus"></i>';
+                            moreEventsButton.classList.remove('active');
+                            eventsBlock.removeChild(allEventsBlock);
+                        }
+                    });
+                }
+            }else if(width<992 && events.length>0){
+
+                dayElement.classList.add('day-button');
+
+                events.forEach(event => {
+                    // Crée un élément pour l'événement
+                    const eventElement = document.createElement('div');
+                    eventElement.textContent = event.name;
+                    event.type.forEach(type => eventElement.classList.add('event', type));
+                    eventElement.classList.add('event');
+    
+                    //addingModal(event, eventElement);
+        
+                    eventsBlock.appendChild(eventElement);
+                });
+
+                //events.open= false;
 
                 const allEventsBlock = document.createElement('div');
                 allEventsBlock.id = 'allEventsBlock';
+
                 
-                // Ajouter le gestionnaire de clic pour afficher tous les événements dans un bloc sous le calendrier
-                moreEventsButton.addEventListener('click', function(){
-                    if(!moreEventsOpen) {
-                        moreEventsOpen= true;
-                        moreEventsButton.innerHTML = '<i class="fa-solid fa-minus"></i>';
-                        moreEventsButton.classList.add('active');
-                        eventsBlock.appendChild(allEventsBlock);
+
+                dayElement.addEventListener('click', ()=> {
+
+                    allEventsMobile.innerHTML= '';
+                    //events.open= true;
+                    //moreEventsButton.innerHTML = '<i class="fa-solid fa-minus"></i>';
+                    //moreEventsButton.classList.add('active');
+                    allEventsMobile.appendChild(allEventsBlock);
+                    displayAllEventsForDay(day, month, year);
+                    //console.log(events);
+                    
+                    /*if(!events.open) {
+                        allEventsMobile.innerHTML= '';
+                        events.open= true;
+                        //moreEventsButton.innerHTML = '<i class="fa-solid fa-minus"></i>';
+                        //moreEventsButton.classList.add('active');
+                        allEventsMobile.appendChild(allEventsBlock);
                         displayAllEventsForDay(day, month, year);
                     } 
                     else{
-                        moreEventsOpen= false;
-                        moreEventsButton.innerHTML = '<i class="fa-solid fa-plus"></i>';
-                        moreEventsButton.classList.remove('active');
-                        eventsBlock.removeChild(allEventsBlock);
-                    }
+                        events.open= false;
+                        //moreEventsButton.innerHTML = '<i class="fa-solid fa-plus"></i>';
+                        //moreEventsButton.classList.remove('active');
+                        allEventsMobile.innerHTML= '';
+                    }*/
                 });
             }
     
@@ -327,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 dayElement.appendChild(dayTitle);
     
                 const dayNumber = document.createElement('div');
-                dayNumber.textContent = i;
+                dayNumber.textContent = (i<10 ? '0' : '') + i;
                 dayNumber.classList.add('day-number');
                 dayTitle.appendChild(dayNumber);
     
@@ -390,11 +450,17 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('change', updateActiveFilters); // Met à jour les filtres quand une case change
     });
 
+    
+
+        
+
     // Appel de la fonction pour charger les événements puis initialiser le calendrier
     loadEvents().then(() => {
         // Initialiser le calendrier ou d'autres fonctions qui nécessitent les événements
         // Initialisation du calendrier
         generateDropdownMenu();
         renderCalendar();
+
+        window.addEventListener("resize", () => renderCalendar());
     });
 });
