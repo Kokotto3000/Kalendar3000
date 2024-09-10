@@ -15,13 +15,13 @@
     <div class="container p-0">
         <div class="row my-5 justify-content-between gap-1">
             <!-- Sidebar -->
-            <div class="filter-col p-3">
+            <div class="d-none d-lg-block filter-col p-3">
                 <div class="d-none d-lg-block">
                     <h1 class="mb-4">Calendrier RH</h2>
                     <p>Bienvenue sur votre calendrier.<br>Son super pouvoir&nbsp;: vous permettre de gagner du temps, d’anticiper vos actions et de ne plus manquer les temps forts de l’année.</p>
                 </div>
                 
-                <div class="d-none d-lg-block mb-4 filter-section">
+                <div class="d-none d-lg-block mb-4 filter-section position-sticky">
                     <h5 class="fs-6 mb-3">Filtrer par&nbsp;:</h5>
 
                     <div class="accordion" id="accordionFilters">
@@ -113,15 +113,17 @@
                           </div>
                         </div>-->
                       </div>
+
+                      <a class="d-none d-lg-flex cta-pills-outline" target="_blank" href="#"><i class="fa-solid fa-circle-info"></i> En savoir plus</a>
                 </div>
                 
-                <a class="d-none d-lg-flex cta-pills-outline self-center" target="_blank" href="#"><i class="fa-solid fa-circle-info"></i> En savoir plus</a>
+                
             </div>
       
             <!-- Calendar -->
-            <div class="calendar-col">
+            <div class="calendar-col mx-auto">
                 <div class="calendar p-3">
-                    <div class="d-flex justify-content-between align-items-center mb-3 calendar-title">
+                    <div class="d-flex justify-content-between align-items-center mb-3 calendar-title gap-3">
                         <div class="dropdown">
                             <button class="btn btn-lg dropdown-toggle text-white d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <h2 id="current-month">Août 2024</h2>
@@ -132,14 +134,14 @@
                         </div>
 
                         <!--<h2 id="current-month" class="h2">Août 2024</h2>-->
-                        <div class="d-flex justify-content-end align-items-center gap-3">
+                        <div class="d-flex justify-content-end align-items-center gap-1">
                             <button id="prev-month" class="btn btn-outline-light"></button>
                             <button id="next-month" class="btn btn-outline-light"></button>
                         </div>
 
-                        <div class="d-flex justify-content-end align-items-center gap-3">
-                            <a class="cta-pills-outline self-center" target="_blank" href="#"><i class="fa-regular fa-share-from-square"></i> Partager le calendrier</a>
-                            <a class="cta-pills-outline self-center" target="_blank" href="#"><i class="fa-regular fa-lightbulb"></i> Proposer un projet</a>
+                        <div class="d-none d-lg-flex justify-content-end align-items-center gap-1">
+                            <a class="cta-pills-outline" target="_blank" href="#"><i class="fa-regular fa-share-from-square"></i> Partager le calendrier</a>
+                            <a class="cta-pills-outline" target="_blank" href="#"><i class="fa-regular fa-lightbulb"></i> Proposer un projet</a>
                         </div>
                     </div>
                     <div id="calendar-days" class="row">

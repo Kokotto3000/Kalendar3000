@@ -129,11 +129,16 @@ label{
 
 label:has(input:checked){
   opacity: 1;
+  font-weight: 700;
+}
+
+.position-sticky{
+  top: 3rem;
 }
 
 .filter-group {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .filter-group label{
@@ -641,9 +646,9 @@ label:has(input:checked){
   align-items: center;
   justify-content: center;
   gap: .5rem;
-  border: 1px solid white;
+  border: 1px solid var(--accent-color);
   border-radius: 9999px;
-  padding: 1rem 1.5rem;
+  padding: 16px;
   font-size: 16px;
   line-height: 1.25rem;
   font-weight: 600;
@@ -651,6 +656,7 @@ label:has(input:checked){
   transition-property: all;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   transition-duration: .15s;
+  background-color: var(--accent-color);
 }
 
 
@@ -760,8 +766,8 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   top: 97%;
   left: 33%;
   background-color: var(--main-color);
-  border-radius: .75rem;
-  padding: 1.5rem;
+  border-radius: 16px;
+  padding: 16px;
   color: white;
   width: max-content;
   z-index: 1000;
@@ -777,13 +783,17 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   border-top: 13px solid transparent;
   border-right: 13px solid transparent;
   border-left: 13px solid transparent;
-  border-bottom: 13px solid rgb(39, 39, 39);
+  border-bottom: 13px solid var(--main-color);
 }
 
 .day-button{
   cursor: pointer;
 }
 
+.dropdown-header {
+  font-size: 1rem;
+  color: var(--title-color);
+}
 
 @media screen and (max-width: 992px) {
   .event:not(#allEventsBlock .event){
@@ -817,15 +827,17 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   }
 
   #calendar-days{
-    background-image: linear-gradient(180deg,#000,#272727);
-    padding: 1rem;
-    border-radius: 1.5rem;
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
     row-gap: 1rem;
     column-gap: 2vw;
   }
 
   .calendar{
     background-image: none;
+    box-shadow: none;
   }
 
   .day {
@@ -834,19 +846,20 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   }
 
   #allEventsBlock{
-    position: static;
+    position: relative;
     top: 0;
     left: 0;
-    background-color: rgb(39, 39, 39);
-    border-radius: .75rem;
-    padding: 1.5rem;
-    color: white;
     width: 100%;
-    z-index: 1000;
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
-  
-  #allEventsBlock:before {
-    display: none;
+
+  #all-events-mobile{
+    width: 100%;
+  }
+
+  .all-events-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }

@@ -171,7 +171,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderCalendar() {
         //vérifier si je ne dois pas faire un resize qqpart...
         const width = window.innerWidth;
-        console.log(width);
+
+        allEventsMobile.innerHTML= '';
+ 
         const month = currentDate.getMonth();
         const year = currentDate.getFullYear();
     
@@ -267,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             
 
-            if(width>=992){
+            if(width>992){
 
                 // Limite le nombre d'événements affichés à 3
                 const displayedEvents = events.slice(0, 2);
@@ -304,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             moreEventsButton.innerHTML = '<i class="fa-solid fa-minus"></i>';
                             moreEventsButton.classList.add('active');
                             eventsBlock.appendChild(allEventsBlock);
-                            displayAllEventsForDay(day, month, year);
+                            displayAllEventsForDay(day, month, year, width);
                         } 
                         else{
                             moreEventsOpen= false;
@@ -314,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     });
                 }
-            }else if(width<992 && events.length>0){
+            }else if(width<=992 && events.length>0){
 
                 dayElement.classList.add('day-button');
 
@@ -344,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     //moreEventsButton.innerHTML = '<i class="fa-solid fa-minus"></i>';
                     //moreEventsButton.classList.add('active');
                     allEventsMobile.appendChild(allEventsBlock);
-                    displayAllEventsForDay(day, month, year);
+                    displayAllEventsForDay(day, month, year, width);
                     //console.log(events);
                     
                     /*if(!events.open) {
@@ -402,14 +404,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Fonction pour afficher tous les événements d'un jour donné sous le calendrier
-    function displayAllEventsForDay(day, month, year) {
+    function displayAllEventsForDay(day, month, year, width) {
         const allEventsBlock = document.getElementById('allEventsBlock');
         allEventsBlock.innerHTML = ''; // Efface les événements précédents
 
         const allEventsHeader = document.createElement('div');
-        allEventsHeader.classList.add('all-events-header');
-        //allEventsHeader.innerHTML= `<h5>Tous les évènements du ${day}</h5>`;
-        allEventsHeader.innerHTML= `<h5>Tous les évènements du ${day}</h5>`;
+        allEventsHeader.classList.add('all-events-header', 'mb-3');
+
+        if(width>992){
+            allEventsHeader.innerHTML= `<h5>Tous les évènements du ${(day<10 ? '0' : '') + day}</h5>`;
+        }else if(width<=992){
+            allEventsHeader.innerHTML= `<h5>Tous les évènements du ${(day<10 ? '0' : '') + day}</h5><div class="more-events"><i class="fa-solid fa-minus"></i></div>`;
+        }
+
+        //allEventsHeader.innerHTML= `<h5>Tous les évènements du ${(day<10 ? '0' : '') + day}</h5>`;
 
         allEventsBlock.appendChild(allEventsHeader);
     
