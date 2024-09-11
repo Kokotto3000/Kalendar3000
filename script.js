@@ -346,10 +346,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 
 
                 dayElement.addEventListener('click', ()=> {
+                    window.scroll(0, allEventsMobile.offsetTop);
                     const activeDayElement= document.querySelectorAll('.day-button.active');
                     activeDayElement.forEach(e=> {
                         e.classList.remove('active');
-                    })
+                    });
                     dayElement.classList.add('active');
 
                     allEventsMobile.innerHTML= '';
