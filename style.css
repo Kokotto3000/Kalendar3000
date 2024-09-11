@@ -653,6 +653,8 @@ label:has(input:checked){
 }
 
 .cta-pills-outline {
+  min-width: 55px;
+  min-height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -889,5 +891,13 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .btn.btn-lg.dropdown-toggle{
+    padding-inline : 0;
+  }
+
+  .row.week{
+    font-size: 14px;
   }
 }
