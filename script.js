@@ -179,11 +179,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // Met à jour l'affichage du mois et de l'année
         currentMonthElement.textContent = currentDate.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+
+        // Effacer les jours précédents (sans effacer les noms des jours)
+        const rows = calendarDaysElement.getElementsByClassName('row');
+        while (rows.length > 1) { // Conserver la première ligne pour les jours de la semaine
+            calendarDaysElement.removeChild(rows[1]);
+        }
     
         // Efface tous les jours précédents
-        while (calendarDaysElement.firstChild) { 
+        /*while (calendarDaysElement.firstChild) { 
             calendarDaysElement.removeChild(calendarDaysElement.firstChild);
-        }
+        }*/
     
         // Détermine le premier jour du mois (en considérant que lundi est le premier jour)
         const firstDayOfMonth = new Date(year, month, 1);
@@ -340,13 +346,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 
 
                 dayElement.addEventListener('click', ()=> {
+                    dayElement.classList.add('active');
 
                     allEventsMobile.innerHTML= '';
                     //events.open= true;
                     //moreEventsButton.innerHTML = '<i class="fa-solid fa-minus"></i>';
                     //moreEventsButton.classList.add('active');
                     allEventsMobile.appendChild(allEventsBlock);
-                    displayAllEventsForDay(day, month, year, width);
+                    displayAllEventsForDay(day, month, year, width, dayElement);
                     //console.log(events);
                     
                     /*if(!events.open) {
@@ -404,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Fonction pour afficher tous les événements d'un jour donné sous le calendrier
-    function displayAllEventsForDay(day, month, year, width) {
+    function displayAllEventsForDay(day, month, year, width, element) {
         const allEventsBlock = document.getElementById('allEventsBlock');
         allEventsBlock.innerHTML = ''; // Efface les événements précédents
 
@@ -413,11 +420,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if(width>992){
             allEventsHeader.innerHTML= `<h5>Tous les évènements du ${(day<10 ? '0' : '') + day}</h5>`;
-        }else if(width<=992){
-            allEventsHeader.innerHTML= `<h5>Tous les évènements du ${(day<10 ? '0' : '') + day}</h5><div class="more-events"><i class="fa-solid fa-minus"></i></div>`;
         }
-
-        //allEventsHeader.innerHTML= `<h5>Tous les évènements du ${(day<10 ? '0' : '') + day}</h5>`;
+        else if(width<=992){
+            allEventsHeader.innerHTML= `<h5>Tous les évènements du ${(day<10 ? '0' : '') + day}</h5><div class="more-events"><i class="fa-solid fa-minus"></i></div>`;
+            const closeBtn = allEventsHeader.querySelector(".more-events");
+            closeBtn.addEventListener('click', ()=> {
+                element.classList.remove('active');
+                allEventsMobile.innerHTML='';
+            })
+        }
 
         allEventsBlock.appendChild(allEventsHeader);
     

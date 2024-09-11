@@ -466,7 +466,7 @@ label:has(input:checked){
 }
 
 .modal-content {
-  color: #2f2f2f;
+  color: var(--main-color);
 }
 
 #filters {
@@ -790,9 +790,25 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   cursor: pointer;
 }
 
+#calendar-days .col.day-button:hover, #calendar-days .col.day-button.active, #calendar-days .col.day-button:focus{
+  border: 1px solid var(--main-color);
+}
+
 .dropdown-header {
   font-size: 1rem;
   color: var(--title-color);
+}
+
+.dropdown-toggle::after {
+  border-top: .3em solid var(--title-color);
+  transition: transform 200ms ease-in-out;
+  /*border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent;*/
+}
+
+.dropdown-toggle.show::after{
+  transform: rotate(-180deg);
 }
 
 @media screen and (max-width: 992px) {
@@ -819,7 +835,7 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   }
 
   #calendar-days .col,  #calendar-days .col.disabled{
-    border: none;
+    border: 1px solid transparent;
   }
 
   .day.weekend:not(.day.today) {
