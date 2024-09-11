@@ -346,7 +346,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 
 
                 dayElement.addEventListener('click', ()=> {
-                    window.scroll(0, allEventsMobile.offsetTop);
+                    window.scroll({
+                        top: allEventsMobile.offsetTop,
+                        left: 0,
+                        behavior: "smooth",
+                      });
+                      
+                    //window.scroll(0, allEventsMobile.offsetTop);
                     const activeDayElement= document.querySelectorAll('.day-button.active');
                     activeDayElement.forEach(e=> {
                         e.classList.remove('active');
