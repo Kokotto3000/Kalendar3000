@@ -777,7 +777,7 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
 
 #allEventsBlock{
   position: absolute;
-  top: 97%;
+  top: 105%;
   left: 33%;
   background-color: var(--main-color);
   border-radius: 16px;
@@ -899,5 +899,16 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
 
   .row.week{
     font-size: 14px;
+  }
+
+  h1{
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn.btn-outline-light{
+    width: 40px;
+    height: 40px;
   }
 }
