@@ -6,6 +6,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterInputs = document.querySelectorAll('.event-filter'); // Sélecteurs pour les filtres
     const dropdownMenu = document.querySelector('.dropdown-menu');
     const allEventsMobile= document.getElementById('all-events-mobile');
+    const filterButton = document.getElementById('filter-button');
+    const filterSection = document.querySelector('.filter-section');
+    const closeFilters = document.getElementById('close-filters');
+
+    filterButton.addEventListener('click', ()=> {
+        filterSection.classList.toggle('active');
+    })
+
+    closeFilters.addEventListener('click', ()=> {
+        filterSection.classList.remove('active');
+    })
 
     let currentDate = new Date();
     let activeFilters = []; // Utilisé pour stocker les types de filtres activés
@@ -95,12 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour mettre à jour les filtres actifs
     function updateActiveFilters() {
         activeFilters= [];
-
         filterInputs.forEach(input => {
             if(input.checked){
                 activeFilters.push(input.value);
             }
-        })
+        });
 
         renderCalendar(); // Re-render le calendrier avec les nouveaux filtres
     }
@@ -169,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour afficher le calendrier
     function renderCalendar() {
+        console.log(activeFilters);
         //vérifier si je ne dois pas faire un resize qqpart...
         const width = window.innerWidth;
 
@@ -322,6 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     });
                 }
+
             }else if(width<=992 && events.length>0){
 
                 dayElement.classList.add('day-button');
@@ -479,10 +491,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if(input.checked) activeFilters.push(input.value); // Coche toutes les cases // Ajouter chaque filtre à la liste des filtres actifs
         input.addEventListener('change', updateActiveFilters); // Met à jour les filtres quand une case change
     });
-
-    
-
-        
 
     // Appel de la fonction pour charger les événements puis initialiser le calendrier
     loadEvents().then(() => {

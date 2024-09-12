@@ -16,19 +16,91 @@
 <body>
     <div class="container p-0">
         <div class="row my-5 justify-content-between gap-1">
-            <div class="d-lg-none p-3">
+            <div class="d-flex justify-content-between d-lg-none p-3">
                 <h1>Calendrier RH</h1>
+
+                <a id="filter-button" class="d-flex align-items-center justify-content-center gap-2 px-0">
+                    <i class="fa-solid fa-filter"></i>Filtrer
+                </a>
+
+                <!--<div class="d-lg-none d-flex align-items-center px-0">
+                    <a id="filter-button" class="d-flex align-items-center justify-content-center gap-2 px-0" data-bs-toggle="offcanvas" href="#offcanvasFilters" role="button" aria-controls="offcanvasFilters">
+                        <i class="fa-solid fa-filter"></i>Filtrer
+                    </a>
+                    
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasFiltersLabel">Filtrer par&nbsp;:</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body">
+                            <div class="accordion" id="accordionPanelsStayOpenFiltersMobile accordionFilters">
+                                <div class="accordion-item">
+                                    <div class="btn-group d-flex justify-content-between">
+                                        
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOneMobile" aria-expanded="true" aria-controls="panelsStayOpen-collapseOneMobile">
+                                            Thématiques
+                                        </button>
+                                        
+                                    </div>
+
+                                    <div id="panelsStayOpen-collapseOneMobile" class="accordion-collapse collapse show">
+                                        <div class="accordion-body">
+                                            <div id="filtersThematique">
+                                                <div class="filter-group avantages-salaries">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="avantages-salaries" checked>Avantages salariés</label>
+                                                </div>
+                                                <div class="filter-group bien-etre">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="bien-etre" checked>Bien-être au travail</label>
+                                                </div>
+                                                <div class="filter-group espace">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="espace" checked>Espace de travail</label>
+                                                </div>
+                                                <div class="filter-group formation">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="formation" checked>Formation</label>
+                                                </div>
+                                                <div class="filter-group juridique">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="juridique" checked>Juridique</label>
+                                                </div>
+                                                <div class="filter-group paie">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="paie" checked>Paie</label>
+                                                </div>
+                                                <div class="filter-group recrutement">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="recrutement" checked>Recrutement</label>
+                                                </div>
+                                                <div class="filter-group rse">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="rse" checked>RSE</label>
+                                                </div>
+                                                <div class="filter-group veille-rh">
+                                                    <label><input type="checkbox" class="event-filter-mobile" value="veille-rh" checked>Veille RH</label>
+                                                </div>
+                                            </div>                 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
             </div>
             
             <!-- Sidebar -->
-            <div class="d-none d-lg-block filter-col p-3">
+            <div class="filter-col p-0 p-lg-3">
                 <div class="d-none d-lg-block">
                     <h1 class="mb-4">Calendrier RH</h1>
                     <p>Bienvenue sur votre calendrier.<br>Son super pouvoir&nbsp;: vous permettre de gagner du temps, d’anticiper vos actions et de ne plus manquer les temps forts de l’année.</p>
                 </div>
                 
-                <div class="d-none d-lg-block mb-4 filter-section position-sticky">
-                    <h5 class="fs-6 mb-3">Filtrer par&nbsp;:</h5>
+                <div class="mb-4 filter-section p-3 p-lg-0">
+                    <!--<h5 class="fs-6 mb-3">Filtrer par&nbsp;:</h5>-->
+
+                    <div class="d-flex justify-content-between">
+                        <h5 class="fs-6 mb-3" id="offcanvasFiltersLabel">Filtrer par&nbsp;:</h5>
+                        <button id="close-filters" type="button" class="btn-close d-lg-none" aria-label="Close"></button>
+                    </div>
 
                     <div class="accordion" id="accordionFilters">
                         <div class="accordion-item mb-3">
@@ -118,9 +190,9 @@
                             </div>
                           </div>
                         </div>-->
-                      </div>
+                    </div>
 
-                      <a class="d-none d-lg-flex cta-pills-outline" target="_blank" href="#"><i class="fa-solid fa-circle-info"></i> En savoir plus</a>
+                    <a class="d-none d-lg-flex cta-pills-outline" target="_blank" href="#"><i class="fa-solid fa-circle-info"></i> En savoir plus</a>
                 </div>
                 
                 
