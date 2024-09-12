@@ -64,15 +64,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function generateDropdownMenu() {
         const currentMonth = currentDate.getMonth();
         const currentYear = currentDate.getFullYear();
-
+    
         let previousYear = null;
-
+    
         // Ajouter les 6 mois précédents et les 6 mois suivants dans le dropdown
         for (let i = -6; i <= 6; i++) {
             let month = new Date(currentYear, currentMonth + i, 1);
             let monthName = month.toLocaleDateString('fr-FR', { month: 'long' });
             let year = month.getFullYear();
-
+    
             // Si l'année change, ajouter un sous-titre pour l'année
             if (year !== previousYear) {
                 let yearHeader = document.createElement('li');
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 dropdownMenu.appendChild(yearHeader);
                 previousYear = year;
             }
-
+    
             let listItem = document.createElement('li');
             let linkItem = document.createElement('a');
             linkItem.className = 'dropdown-item';
@@ -89,7 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
             linkItem.textContent = `${monthName.charAt(0).toUpperCase() + monthName.slice(1)}`;
             linkItem.dataset.month = month.getMonth();
             linkItem.dataset.year = year;
-
+    
+            // Ajouter une classe spéciale pour le mois en cours
+            if (month.getMonth() === currentMonth && year === currentYear) {
+                linkItem.classList.add('current-month');
+            }
+    
             // Ajouter l'événement de clic pour changer le mois
             linkItem.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -97,11 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentDate.setFullYear(parseInt(this.dataset.year));
                 renderCalendar(); // Mettre à jour le calendrier après changement
             });
-
+    
             listItem.appendChild(linkItem);
             dropdownMenu.appendChild(listItem);
         }
     }
+    
 
     // Fonction pour mettre à jour les filtres actifs
     function updateActiveFilters() {
@@ -147,27 +153,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
             switch (event.format) {
                 case 'pdf':
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-file-arrow-down"></i>Télécharger le contenu</a>`;
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-file-arrow-down"></i>Télécharger le contenu</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
                     sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-file-arrow-down"></i>Télécharger le contenu</a>`;
                     break;
                 case 'article':
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-newspaper"></i>Lire l'article</a>`;
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-newspaper"></i>Lire l'article</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
                     sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-newspaper"></i>Lire l'article</a>`;
                     break;
                 case 'video':
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-video"></i>Regarder la vidéo</a>`;
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-video"></i>Regarder la vidéo</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
                     sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-video"></i>Regarder la vidéo</a>`;
                     break;
                 case 'podcast':
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-play"></i>Écouter le podcast</a>`;
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-play"></i>Écouter le podcast</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
                     sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-play"></i>Écouter le podcast</a>`;
                     break;
                 default:
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-arrow-up-right-from-square"></i>En savoir plus</a>`;
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-arrow-up-right-from-square"></i>En savoir plus</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
                     sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-arrow-up-right-from-square"></i>En savoir plus</a>`;
             }

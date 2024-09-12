@@ -75,7 +75,26 @@ body {
   background: var(--main-bg-color);
   color: var(--main-color);
   font-family: var(--font-family);
+  position: relative;
 }
+
+body:has(.filter-section.active)::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--light-color);
+  opacity: 0.5;
+  z-index: 2000;
+  pointer-events: none;
+  /*transition: background-color 300ms ease-in-out;*/
+}
+
+/*body:has(.filter-section.active){
+  overflow-y: hidden;
+}*/
 
 a{
   text-decoration: none;
@@ -823,6 +842,10 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   transform: rotate(-180deg);
 }
 
+a.current-month{
+  color: var(--accent-color);
+}
+
 @media screen and (max-width: 992px) {
   .event:not(#allEventsBlock .event){
     width: 10px;
@@ -910,6 +933,7 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
   .filter-section {
     top: 0;
     left: -100%;
+    bottom: 0;
     position: absolute;
     width: 40%;
     height: 100%;
@@ -929,6 +953,11 @@ span.all-events, span.obligatoire, span.conseil, span.actualites{
 
   #filter-button{
     cursor: pointer;
+    color: var(--title-color);
+  }
+
+  #filter-button:hover, #filter-button:focus{
+    color: rgb(10,88,202);;
   }
 }
 
