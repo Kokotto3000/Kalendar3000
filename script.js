@@ -185,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour afficher le calendrier
     function renderCalendar() {
-        console.log(activeFilters);
         //vérifier si je ne dois pas faire un resize qqpart...
         const width = window.innerWidth;
 
@@ -383,7 +382,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     //moreEventsButton.classList.add('active');
                     allEventsMobile.appendChild(allEventsBlock);
                     displayAllEventsForDay(day, month, year, width, dayElement);
-                    //console.log(events);
                     
                     /*if(!events.open) {
                         allEventsMobile.innerHTML= '';
