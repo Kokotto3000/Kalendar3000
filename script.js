@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterSection = document.querySelector('.filter-section');
     const closeFilters = document.getElementById('close-filters');
 
+    function copy() {
+        let copyText = document.querySelector("#input");
+        copyText.select();
+        document.execCommand("copy");
+      }
+      
+    document.querySelector("#copy").addEventListener("click", copy);
+
     filterButton.addEventListener('click', ()=> {
         filterSection.classList.toggle('active');
     })

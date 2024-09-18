@@ -157,7 +157,12 @@
                         </div>
 
                         <div class="d-none d-lg-flex justify-content-end align-items-center gap-1">
-                            <a class="d-flex justify-content-center align-items-center cta-pills-outline" target="_blank" href="#"><i class="fa-regular fa-share-from-square"></i><p class="m-0 p-0 d-none d-xl-inline">Partager le calendrier</p></a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="d-flex justify-content-center align-items-center cta-pills-outline" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                <i class="fa-regular fa-share-from-square"></i><p class="m-0 p-0 d-none d-xl-inline">Partager le calendrier</p>
+                            </button>
+  
+                            <!--<a class="d-flex justify-content-center align-items-center cta-pills-outline" target="_blank" href="#"><i class="fa-regular fa-share-from-square"></i><p class="m-0 p-0 d-none d-xl-inline">Partager le calendrier</p></a>-->
                             <a class="d-flex justify-content-center align-items-center cta-pills-outline" target="_blank" href="#"><i class="fa-regular fa-lightbulb"></i><p class="m-0 p-0 d-none d-xl-inline">Proposer un projet</p></a>
                         </div>
                     </div>
@@ -191,7 +196,7 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Modal détails des évènements-->
         <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable position-relative modal-lg">
                 <div class="modal-content overflow-visible p-3">
@@ -227,6 +232,26 @@
                 
             </div>
         </div>
+
+        <!-- Modal partager le calendrier-->
+        <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">J'en parle autour de moi</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input id="input" type="text" /> <button id="copy">Copier</button>
+                </div>
+                <div class="modal-footer">
+                    <p>Partager le calendrier des RH sur les réseaux sociaux
+                    <a href=""></a><a href=""></a><a href=""></a></p>
+                </div>
+            </div>
+            </div>
+        </div>
+  
     </div>
   
     <!-- Inclure Bootstrap 5 JS -->

@@ -530,9 +530,9 @@ label:has(input:checked){
 }
 
 /* Style pour les jours de week-end */
-.day.weekend:not(.day.today) {
-  background: rgba(250, 250, 250, 0.05); /* Une couleur de fond différente */
-}
+/*.day.weekend:not(.day.today) {
+  background: rgba(250, 250, 250, 0.05);
+}*/
 
 .row {
   margin-right: 0;
@@ -846,6 +846,12 @@ a.current-month{
   color: var(--accent-color);
 }
 
+@media screen and (min-width: 992px) {
+  #calendar-days .day.col.weekend:not(.day.today) {
+    background: rgba(201, 207, 211, 0.2); /* Une couleur de fond différente */
+  }
+}
+
 @media screen and (max-width: 992px) {
   .event:not(#allEventsBlock .event){
     width: 10px;
@@ -871,10 +877,6 @@ a.current-month{
 
   #calendar-days .col,  #calendar-days .col.disabled{
     border: 1px solid transparent;
-  }
-
-  .day.weekend:not(.day.today) {
-    background: transparent; /* Une couleur de fond différente */
   }
 
   #calendar-days{
