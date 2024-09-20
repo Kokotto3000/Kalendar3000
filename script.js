@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterSection = document.querySelector('.filter-section');
     const closeFilters = document.getElementById('close-filters');
     const calendarUrl = window.location.href; // Remplace par l'URL de ton événement
-    console.log(calendarUrl)
+    
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
-    const imageUrl = '/img/kalendar3000-screenshot-pm.png';
+    const imageUrl = 'img/kalendar3000-screenshot-pm.png';
     const calendarTitle = 'Mon Super Calendrier RH 3000';
     const calendarDescription = 'Découvrez les événements RH à ne pas manquer cette année !';
+    console.log(calendarUrl +imageUrl)
 
     // Informations dynamiques à partager
     const pageUrl = encodeURIComponent(calendarUrl); // URL de la page actuelle
