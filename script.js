@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButton = document.getElementById('filter-button');
     const filterSection = document.querySelector('.filter-section');
     const closeFilters = document.getElementById('close-filters');
+    const copyText = document.getElementById("input");
+    copyText.value= document.location.href;
 
-    function copy() {
-        let copyText = document.querySelector("#input");
+    function copy() { 
+        //document.execCommand("copy");
         copyText.select();
-        document.execCommand("copy");
-      }
+        navigator.clipboard.writeText(copyText.value);
+    }
       
     document.querySelector("#copy").addEventListener("click", copy);
 
@@ -161,30 +163,151 @@ document.addEventListener('DOMContentLoaded', function() {
     
             switch (event.format) {
                 case 'pdf':
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-file-arrow-down"></i>Télécharger le contenu</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
-                    sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-file-arrow-down"></i>Télécharger le contenu</a><button id="addToCalendarBtnMobile" type="button" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>`;
+                    sideBtns.innerHTML= `<button id="addToCalendarBtn" type="button" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-file-arrow-down"></i>Télécharger le contenu</a>`;
                     break;
                 case 'article':
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-newspaper"></i>Lire l'article</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
-                    sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-newspaper"></i>Lire l'article</a><button id="addToCalendarBtnMobile" type="button" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>`;
+                    sideBtns.innerHTML= `<button id="addToCalendarBtn" type="button" data-bs-toggle="modal" data-bs-target="#addToCalendarModal" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-newspaper"></i>Lire l'article</a>`;
                     break;
                 case 'video':
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-video"></i>Regarder la vidéo</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
-                    sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-video"></i>Regarder la vidéo</a><button id="addToCalendarBtnMobile" type="button" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>`;
+                    sideBtns.innerHTML= `<button id="addToCalendarBtn" type="button" data-bs-toggle="modal" data-bs-target="#addToCalendarModal" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-video"></i>Regarder la vidéo</a>`;
                     break;
                 case 'podcast':
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-play"></i>Écouter le podcast</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
-                    sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-play"></i>Écouter le podcast</a><button id="addToCalendarBtnMobile" type="button" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>`;
+                    sideBtns.innerHTML= `<button id="addToCalendarBtn" type="button" data-bs-toggle="modal" data-bs-target="#addToCalendarModal" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-play"></i>Écouter le podcast</a>`;
                     break;
                 default:
-                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-arrow-up-right-from-square"></i>En savoir plus</a><a href="#" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>`;
-                    sideBtns.innerHTML= `<a href="#" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></a>
+                    readBtn.innerHTML= `<a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-arrow-up-right-from-square"></i>En savoir plus</a><button id="addToCalendarBtnMobile" type="button" class="d-flex d-lg-none align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>`;
+                    sideBtns.innerHTML= `<button id="addToCalendarBtn" type="button" data-bs-toggle="modal" data-bs-target="#addToCalendarModal" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-regular fa-calendar-plus"></i><span>Ajouter à mon calendrier</span></button>
                     <a href="${event.url}" target="_blank" rel="noreferrer" class="d-flex align-items-center justify-content-center flex-column gap-2 p-3 text-center"><i class="fa-solid fa-arrow-up-right-from-square"></i>En savoir plus</a>`;
             }
+
+            document.getElementById('addToCalendarBtn').addEventListener('click', ()=> {
+                new bootstrap.Modal(document.getElementById('addToCalendarModal')).show();
+            });
+
+            document.getElementById('addToCalendarBtnMobile').addEventListener('click', ()=> {
+                new bootstrap.Modal(document.getElementById('addToCalendarModal')).show();
+            });
+
+            //GOOGLE
+            document.getElementById('googleCalendar').addEventListener('click', function() {
+            //détails de l'évènement
+            // Conversion de la date
+            const eventDate = new Date(event.date);
+
+            // Format pour Google Calendar: YYYYMMDD
+            const googleStartDate = eventDate.toISOString().replace(/-|:|\.\d+/g, '').slice(0, 15); // 20240930T000000Z
+            const googleEndDate = googleStartDate;
+
+            const title = encodeURIComponent(event.titreComplet);
+            const location = encodeURIComponent("France");
+            const details = encodeURIComponent(event.description);
+            const startDate = googleStartDate; // Format: YYYYMMDDTHHMMSSZ
+            const endDate = googleEndDate;
+        
+            // URL pour ajouter l'événement à Google Calendar
+            const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}&sf=true&output=xml`;
+        
+            // Ouvre la nouvelle fenêtre pour ajouter l'événement
+            window.open(calendarUrl, '_blank');
+            });
+
+            //OUTLOOK
+            document.getElementById('outlookCalendar').addEventListener('click', function() {
+                //détails de l'évènement
+                // Conversion de la date
+                const eventDate = new Date(event.date);
+    
+                // Format pour Outlook Calendar: YYYY-MM-DDTHH:MM:SS
+                const outlookStartDate = eventDate.toISOString().split('.')[0]; // 2024-09-30T00:00:00
+                const outlookEndDate = outlookStartDate; // Même début et fin pour un événement d'une journée
+    
+                const title = encodeURIComponent(event.titreComplet);
+                const location = encodeURIComponent("France");
+                const details = encodeURIComponent(event.description);
+                const startDate = outlookStartDate; // Format: YYYY-MM-DDTHH:MM:SS
+                const endDate = outlookEndDate;
+            
+                // URL pour ajouter l'événement à Outlook Calendar
+                const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${title}&body=${details}&location=${location}&startdt=${startDate}&enddt=${endDate}`;
+
+                window.open(outlookUrl, '_blank');
+            });
+
+            //APPLE
+            document.getElementById('appleCalendar').addEventListener('click', function() {
+
+                // Format pour Apple Calendar (.ics): YYYYMMDDTHHMMSSZ
+                const title= event.titreComplet;
+                const date= new Date(event.date);
+                // Format pour Apple Calendar (.ics): YYYYMMDDTHHMMSSZ (UTC)
+                const appleStartDate = date.toISOString().replace(/-|:|\.\d+/g, '').slice(0, 15) + 'Z';  // 20240930T000000Z
+                const appleEndDate = appleStartDate.slice(0, 8) + "T235900Z";  // Même jour, 23:59
+                const location = "Paris, France";
+                // Utilise la description nettoyée en texte brut
+                const plainTextDescription = convertHtmlToPlainText(event.description).trim();
+
+                function convertHtmlToPlainText(html) {
+                    // Crée un élément DOM temporaire pour retirer les balises HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+                  
+                    // Utilise textContent pour obtenir uniquement le texte brut
+                    let plainText = tempDiv.textContent || tempDiv.innerText || '';
+                  
+                    // Remplace les caractères spéciaux problématiques pour un fichier .ics
+                    plainText = plainText.replace(/,/g, '\\,');  // Échappe les virgules
+                    plainText = plainText.replace(/;/g, '\\;');  // Échappe les points-virgules
+                    plainText = plainText.replace(/\n/g, '\\n'); // Échappe les retours à la ligne
+                  
+                    return plainText;
+                }
+
+                function escapeSpecialCharacters(text) {
+                    return text
+                      .replace(/,/g, '\\,')   // Échappe les virgules
+                      .replace(/;/g, '\\;')   // Échappe les points-virgules
+                      .replace(/\n/g, '\\n')  // Échappe les sauts de ligne
+                      .replace(/:/g, '\\:');  // Échappe les deux-points
+                }
+                
+                escapeSpecialCharacters(plainTextDescription);
+
+                // Génération du contenu du fichier .ics
+                const icsContent = `
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MonApp//MonProduit//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:${title}
+DTSTART:${appleStartDate}
+DTEND:${appleEndDate}
+LOCATION:${location}
+DESCRIPTION:${plainTextDescription}
+UID:${new Date().getTime()}@monapp.com
+STATUS:CONFIRMED
+SEQUENCE:0
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
+`.trim();  // Trim supprime les espaces en début et fin pour éviter les lignes blanches superflues
+              
+                // Création d'un blob pour permettre le téléchargement du fichier .ics
+                const blob = new Blob([icsContent], { type: 'text/calendar' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'event.ics';
+                link.click();
+              });
+              
     
             new bootstrap.Modal(document.getElementById('eventModal')).show();
         });

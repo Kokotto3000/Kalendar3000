@@ -704,7 +704,7 @@ label:has(input:checked){
   border-radius: 1rem;
 }
 
-.side-buttons a, #read-button a{
+.side-buttons a, #read-button a, .side-buttons button, #read-button button{
   font-weight: 600;
   border-radius: .75rem;
   width: 7rem;
@@ -714,30 +714,33 @@ label:has(input:checked){
   transition: all 200ms ease-in-out;
 }
 
-#read-button a{
+#read-button a, #read-button button{
   border: 1px solid var(--main-color);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.side-buttons a i{
+.side-buttons a i, .side-buttons button i{
   font-size: 2rem;
 }
 
-#read-button a i{
+#read-button a i, #read-button button i{
   font-size: 1.5rem;
 }
 
-.side-buttons a:hover{
+.side-buttons a:hover, .side-buttons button:hover{
   border-color: var(--main-color);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-#read-button a:hover{
+#read-button a:hover, #read-button button:hover{
   background-color: var(--main-color);
   color: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.side-buttons button, #read-button button{
+  background-color: transparent;
+}
 
 .modal-header{
   border-bottom: none;
@@ -846,6 +849,7 @@ a.current-month{
   color: var(--accent-color);
 }
 
+/*style pour les week-end, peut-être inutile...*/
 @media screen and (min-width: 992px) {
   #calendar-days .day.col.weekend:not(.day.today) {
     background: rgba(201, 207, 211, 0.2); /* Une couleur de fond différente */
@@ -978,4 +982,13 @@ a.current-month{
   .filter-section {
     width: 80%;
   }
+}
+
+#addToCalendarModal{
+  backdrop-filter: brightness(40%);
+  z-index: 10000;
+}
+
+#addToCalendarModal .modal-dialog{
+  top: 20%;
 }

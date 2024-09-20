@@ -186,7 +186,7 @@
                     <div class="d-flex justify-content-between justify-content-lg-end w-100 mt-3">
                         <div class="d-flex d-lg-none gap-3">
                             <a class="d-flex cta-pills-outline" target="_blank" href="#"><i class="fa-solid fa-circle-info"></i></a>
-                            <a class="d-flex cta-pills-outline" target="_blank" href="#"><i class="fa-regular fa-share-from-square"></i></a>
+                            <button type="button" class="d-flex justify-content-center align-items-center cta-pills-outline" data-bs-toggle="modal" data-bs-target="#shareModal" title="Partager le calendrier"><i class="fa-regular fa-share-from-square"></i></button>
                             <a class="d-flex cta-pills-outline" target="_blank" href="#"><i class="fa-regular fa-lightbulb"></i></a>
                         </div>
                         
@@ -234,19 +234,36 @@
         </div>
 
         <!-- Modal partager le calendrier-->
-        <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">J'en parle autour de moi</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="shareModalLabel">J'en parle autour de moi</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
                 <div class="modal-body">
-                    <input id="input" type="text" /> <button id="copy">Copier</button>
+                    <input id="input" type="text" value="" readonly="readonly"/><button id="copy">Copier l'URL</button>
                 </div>
                 <div class="modal-footer">
                     <p>Partager le calendrier des RH sur les réseaux sociaux
                     <a href=""></a><a href=""></a><a href=""></a></p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal ajouter à son calendrier-->
+        <div class="modal fade" id="addToCalendarModal" tabindex="-1" aria-labelledby="addToCalendarModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addToCalendarModalLabel">Ajouter à mon calendrier</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <button id="googleCalendar">GOOGLE</button>
+                    <button id="outlookCalendar">OUTLOOK</button>
+                    <button id="appleCalendar">APPLE</button>
                 </div>
             </div>
             </div>
