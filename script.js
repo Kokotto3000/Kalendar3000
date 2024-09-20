@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButton = document.getElementById('filter-button');
     const filterSection = document.querySelector('.filter-section');
     const closeFilters = document.getElementById('close-filters');
-    const calendarUrl = document.location.origin; // Remplace par l'URL de ton événement
+    const calendarUrl = document.location.href; // Remplace par l'URL de ton événement
+    console.log(calendarUrl)
    
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
@@ -30,8 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('twitter-image').setAttribute('content', calendarUrl + imageUrl);
     }
 
-    // Appel de la fonction pour mettre à jour les métadonnées
-    updateMetaTags();
+    
 
     document.getElementById('shareOnFacebook').addEventListener('click', ()=> {
         const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(calendarUrl)}`;
@@ -670,6 +670,8 @@ END:VCALENDAR
         // Initialisation du calendrier
         generateDropdownMenu();
         renderCalendar();
+        // Appel de la fonction pour mettre à jour les métadonnées
+        updateMetaTags();
 
         window.addEventListener("resize", () => renderCalendar());
     });
