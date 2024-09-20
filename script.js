@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(calendarUrl)
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
-    const imageUrl = 'https://cdn.discordapp.com/attachments/821827041146044529/1286820781376016474/kalendar3000-screenshot-pm.png?ex=66ef4cbe&is=66edfb3e&hm=f887758808bbae451ab5b97b2713dcc40e594b060c994d4c515e92f901c88c51&';
+    const imageUrl = '/img/kalendar3000-screenshot-pm.png';
     const calendarTitle = 'Mon Super Calendrier RH 3000';
     const calendarDescription = 'Découvrez les événements RH à ne pas manquer cette année !';
 
@@ -21,20 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageUrl = encodeURIComponent(calendarUrl); // URL de la page actuelle
     const title = encodeURIComponent(calendarTitle);
     const description = encodeURIComponent(calendarDescription);
-    //const image = encodeURIComponent(imageUrl);
+    const image = encodeURIComponent(imageUrl);
 
-    console.log(imageUrl)
+    console.log(pageUrl + image)
 
     // Met à jour les métadonnées
     function updateMetaTags() {
         document.getElementById('og-title').setAttribute('content', title);
         document.getElementById('og-description').setAttribute('content', description);
-        document.getElementById('og-image').setAttribute('content', imageUrl);
+        document.getElementById('og-image').setAttribute('content', pageUrl + image);
         document.getElementById('og-url').setAttribute('content', pageUrl);
         
         document.getElementById('twitter-title').setAttribute('content', title);
         document.getElementById('twitter-description').setAttribute('content', description);
-        document.getElementById('twitter-image').setAttribute('content', imageUrl);
+        document.getElementById('twitter-image').setAttribute('content', pageUrl + image);
     }
 
     
