@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(calendarUrl)
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
-    const imageUrl = 'https://cdn.discordapp.com/attachments/821827041146044529/1286815868680146954/kalendar3000-screenshot.png?ex=66ef482a&is=66edf6aa&hm=2bc344098e9fd94462bbc1b3e86bc8c71c9c6d2fa9231cad93408b6ce50fba77&';
+    const imageUrl = 'https://cdn.discordapp.com/attachments/821827041146044529/1286820781376016474/kalendar3000-screenshot-pm.png?ex=66ef4cbe&is=66edfb3e&hm=f887758808bbae451ab5b97b2713dcc40e594b060c994d4c515e92f901c88c51&';
     const calendarTitle = 'Mon Super Calendrier RH 3000';
     const calendarDescription = 'Découvrez les événements RH à ne pas manquer cette année !';
 
