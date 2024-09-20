@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
    
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
-    const imageUrl = '/img/kalendar3000-screenshot.png';
+    const imageUrl = 'img/kalendar3000-screenshot.png';
     const eventTitle = 'Kalendar3000';
     const eventDescription = 'Découvrez ce Kalendrier incroyable !';
     console.log(calendarUrl + imageUrl)
