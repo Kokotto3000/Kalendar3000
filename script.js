@@ -9,8 +9,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButton = document.getElementById('filter-button');
     const filterSection = document.querySelector('.filter-section');
     const closeFilters = document.getElementById('close-filters');
+    const calendarUrl = document.location.href; // Remplace par l'URL de ton événement
     const copyText = document.getElementById("input");
-    copyText.value= document.location.href;
+    copyText.value= calendarUrl;
+    const imageUrl = './img/kalendar3000-screenshot.png';
+    const eventTitle = 'Kalendar3000';
+    const eventDescription = 'Découvrez ce Kalendrier incroyable !';
+
+    // Met à jour les métadonnées
+    function updateMetaTags() {
+        document.getElementById('og-title').setAttribute('content', eventTitle);
+        document.getElementById('og-description').setAttribute('content', eventDescription);
+        document.getElementById('og-image').setAttribute('content', imageUrl);
+        document.getElementById('og-url').setAttribute('content', calendarUrl);
+        
+        document.getElementById('twitter-title').setAttribute('content', eventTitle);
+        document.getElementById('twitter-description').setAttribute('content', eventDescription);
+        document.getElementById('twitter-image').setAttribute('content', imageUrl);
+    }
+
+    // Appel de la fonction pour mettre à jour les métadonnées
+    updateMetaTags();
+
+    document.getElementById('shareOnFacebook').addEventListener('click', ()=> {
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(calendarUrl)}`;
+        window.open(facebookUrl, '_blank');
+    });
+
+    document.getElementById('shareOnTwitter').addEventListener('click', ()=>  {
+        const tweetText = "Découvrez ce Kalendrier incroyable !";
+        const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(calendarUrl)}&text=${encodeURIComponent(tweetText)}&via=Kokotto3000`;
+        window.open(twitterUrl, '_blank');
+    });
+
+    document.getElementById('shareOnLinkedIn').addEventListener('click', ()=>  {
+        const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(calendarUrl)}`;
+        window.open(linkedInUrl, '_blank');
+    });
 
     function copy() { 
         //document.execCommand("copy");
