@@ -9,43 +9,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButton = document.getElementById('filter-button');
     const filterSection = document.querySelector('.filter-section');
     const closeFilters = document.getElementById('close-filters');
-    const calendarUrl = document.location.href; // Remplace par l'URL de ton événement
+    const calendarUrl = window.location.href; // Remplace par l'URL de ton événement
     console.log(calendarUrl)
-   
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
     const imageUrl = 'img/kalendar3000-screenshot.png';
-    const eventTitle = 'Kalendar3000';
-    const eventDescription = 'Découvrez ce Kalendrier incroyable !';
+    const calendarTitle = 'Mon Super Calendrier RH 3000';
+    const calendarDescription = 'Découvrez les événements RH à ne pas manquer cette année !';
     console.log(calendarUrl + imageUrl)
+
+    // Informations dynamiques à partager
+    const pageUrl = encodeURIComponent(calendarUrl); // URL de la page actuelle
+    const title = encodeURIComponent(calendarTitle);
+    const description = encodeURIComponent(calendarDescription);
+    const image = encodeURIComponent(calendarUrl + imageUrl);
 
     // Met à jour les métadonnées
     function updateMetaTags() {
-        document.getElementById('og-title').setAttribute('content', eventTitle);
-        document.getElementById('og-description').setAttribute('content', eventDescription);
-        document.getElementById('og-image').setAttribute('content', calendarUrl + imageUrl);
-        document.getElementById('og-url').setAttribute('content', calendarUrl);
+        document.getElementById('og-title').setAttribute('content', title);
+        document.getElementById('og-description').setAttribute('content', description);
+        document.getElementById('og-image').setAttribute('content', pageUrl + image);
+        document.getElementById('og-url').setAttribute('content', pageUrl);
         
-        document.getElementById('twitter-title').setAttribute('content', eventTitle);
-        document.getElementById('twitter-description').setAttribute('content', eventDescription);
-        document.getElementById('twitter-image').setAttribute('content', calendarUrl + imageUrl);
+        document.getElementById('twitter-title').setAttribute('content', title);
+        document.getElementById('twitter-description').setAttribute('content', description);
+        document.getElementById('twitter-image').setAttribute('content', pageUrl + image);
     }
 
     
 
     document.getElementById('shareOnFacebook').addEventListener('click', ()=> {
-        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(calendarUrl)}`;
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
         window.open(facebookUrl, '_blank');
     });
 
     document.getElementById('shareOnTwitter').addEventListener('click', ()=>  {
         const tweetText = "Découvrez ce Kalendrier incroyable !";
-        const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(calendarUrl)}&text=${encodeURIComponent(tweetText)}&via=Kokotto3000`;
+        const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(tweetText)}&via=Kokotto3000`;
         window.open(twitterUrl, '_blank');
     });
 
     document.getElementById('shareOnLinkedIn').addEventListener('click', ()=>  {
-        const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(calendarUrl)}`;
+        const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
         window.open(linkedInUrl, '_blank');
     });
 
