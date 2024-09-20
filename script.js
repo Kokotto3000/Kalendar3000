@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateMetaTags() {
         document.getElementById('og-title').setAttribute('content', title);
         document.getElementById('og-description').setAttribute('content', description);
-        document.getElementById('og-image').setAttribute('content', imageUrl);
+        document.getElementById('og-image').setAttribute('content', image);
         document.getElementById('og-url').setAttribute('content', pageUrl);
         
         document.getElementById('twitter-title').setAttribute('content', title);
         document.getElementById('twitter-description').setAttribute('content', description);
-        document.getElementById('twitter-image').setAttribute('content', imageUrl);
+        document.getElementById('twitter-image').setAttribute('content', image);
     }
 
     
