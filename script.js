@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const calendarUrl = document.location.href; // Remplace par l'URL de ton événement
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
-    const imageUrl = './img/kalendar3000-screenshot.png';
+    const imageUrl = '/img/kalendar3000-screenshot.png';
     const eventTitle = 'Kalendar3000';
     const eventDescription = 'Découvrez ce Kalendrier incroyable !';
 
@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateMetaTags() {
         document.getElementById('og-title').setAttribute('content', eventTitle);
         document.getElementById('og-description').setAttribute('content', eventDescription);
-        document.getElementById('og-image').setAttribute('content', imageUrl);
+        document.getElementById('og-image').setAttribute('content', calendarUrl + imageUrl);
         document.getElementById('og-url').setAttribute('content', calendarUrl);
         
         document.getElementById('twitter-title').setAttribute('content', eventTitle);
         document.getElementById('twitter-description').setAttribute('content', eventDescription);
-        document.getElementById('twitter-image').setAttribute('content', imageUrl);
+        document.getElementById('twitter-image').setAttribute('content', calendarUrl + imageUrl);
     }
 
     // Appel de la fonction pour mettre à jour les métadonnées
