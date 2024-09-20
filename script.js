@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButton = document.getElementById('filter-button');
     const filterSection = document.querySelector('.filter-section');
     const closeFilters = document.getElementById('close-filters');
-    const calendarUrl = document.location.href; // Remplace par l'URL de ton événement
+    const calendarUrl = document.location.origin; // Remplace par l'URL de ton événement
+   
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
     const imageUrl = '/img/kalendar3000-screenshot.png';
     const eventTitle = 'Kalendar3000';
     const eventDescription = 'Découvrez ce Kalendrier incroyable !';
+    console.log(calendarUrl + imageUrl)
 
     // Met à jour les métadonnées
     function updateMetaTags() {
