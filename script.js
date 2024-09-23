@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageUrl = 'https://kokotto3000.com/kalendar3000-screenshot-1200-630.png';
     const calendarTitle = 'Mon Super Calendrier RH 3000';
     const calendarDescription = 'Découvrez les événements RH à ne pas manquer cette année !';
-    console.log(imageUrl)
 
     // Informations dynamiques à partager
     const pageUrl = encodeURIComponent(calendarUrl); // URL de la page actuelle
