@@ -7,7 +7,7 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Kalendar3000" id="og-title" />
     <meta property="og:description" content="Découvrez ce Kalendrier incroyable !" id="og-description" />
-    <meta property="og:image" content="https://example.com/image.jpg" id="og-image" />
+    <meta property="og:image" content="/img/kalendar3000-screenshot-pm.png" id="og-image" />
     <meta property="og:url" content="https://drive.google.com/file/d/your-file-id/view?usp=sharing" id="og-url" />
     <meta property="og:type" content="website" />
 
@@ -15,7 +15,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kalendar3000" id="twitter-title">
     <meta name="twitter:description" content="Découvrez ce Kalendrier incroyable !" id="twitter-description">
-    <meta name="twitter:image" content="/img/kalendar3000-screenshot.png" id="twitter-image">
+    <meta name="twitter:image" content="/img/kalendar3000-screenshot-pm.png" id="twitter-image">
 
     <link rel="icon" type="image/png" href="./favicon.png">
     
@@ -254,14 +254,14 @@
                 <h1 class="modal-title fs-5" id="shareModalLabel">J'en parle autour de moi</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
-                <div class="modal-body">
-                    <input id="input" type="text" value="" readonly="readonly"/><button id="copy">Copier l'URL</button>
+                <div class="modal-body d-flex justify-content-between gap-3 align-items-center flex-wrap">
+                    <input id="input" type="text" value="" readonly="readonly"/><button id="copy" class="cta-pills-outline">Copier l'URL</button>
                 </div>
                 <div class="modal-footer">
-                    <p>Partager le calendrier des RH sur les réseaux sociaux
-                    <button id="shareOnFacebook">Partager sur Facebook</button>
-                    <button id="shareOnTwitter">Partager sur Twitter</button>
-                    <button id="shareOnLinkedIn">Partager sur LinkedIn</button>
+                    <p class="d-flex justify-content-between align-items-center flex-wrap gap-1">Partager le calendrier des RH sur les réseaux sociaux
+                    <button id="shareOnFacebook" title="Partager sur Facebook" class="cta-pills-outline"><i class="fa-brands fa-facebook-f"></i></button>
+                    <button id="shareOnTwitter" title="Partager sur X" class="cta-pills-outline"><i class="fa-brands fa-x-twitter"></i></button>
+                    <button id="shareOnLinkedIn" title="Partager sur LinkedIn" class="cta-pills-outline"><i class="fa-brands fa-linkedin-in"></i></button>
                 </div>
             </div>
             </div>
@@ -275,10 +275,10 @@
                 <h1 class="modal-title fs-5" id="addToCalendarModalLabel">Ajouter à mon calendrier</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
-                <div class="modal-body">
-                    <button id="googleCalendar">GOOGLE</button>
-                    <button id="outlookCalendar">OUTLOOK</button>
-                    <button id="appleCalendar">APPLE</button>
+                <div class="modal-body d-flex flex-column align-items-center justify-content-center gap-3">
+                    <button id="googleCalendar" class="cta-pills-outline">Calendrier Google</button>
+                    <button id="outlookCalendar" class="cta-pills-outline">Calendrier Outlook</button>
+                    <button id="appleCalendar" class="cta-pills-outline">Calendrier Apple</button>
                 </div>
             </div>
             </div>

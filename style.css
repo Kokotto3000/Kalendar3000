@@ -989,6 +989,59 @@ a.current-month{
   z-index: 10000;
 }
 
+#addToCalendarModal .modal-content{
+  padding: 3rem;
+  /*width: max-content;*/
+}
+
+#addToCalendarModal .modal-body{
+  margin-top: 1.5rem;
+}
+
+#addToCalendarModal .modal-body button{
+  width: 300px;
+}
+
 #addToCalendarModal .modal-dialog{
   top: 20%;
+}
+
+#shareModal input{
+  background-color: rgba(201, 207, 211, 0.2);
+  border-radius: 16px;
+  border: none;
+  width: 35ch;
+  padding: 1rem 1.5rem;
+  pointer-events: none;
+  display: inline;
+  max-width: 100%;
+}
+
+#shareModal .modal-footer{
+  border: none;
+}
+
+#shareModal .modal-footer button{
+
+  min-width: 55px;
+  min-height: 55px;
+
+}
+
+#shareModal .modal-content{
+  margin: auto;
+  max-width: 90vw;
+  width: max-content;
+  padding: 3rem;
+}
+
+#copy{
+  background-color: transparent;
+  color: var(--accent-color);
+  padding-inline: 1.5rem;
+}
+
+#copy:hover, #copy:focus {
+  background-color: var(--accent-color);
+  color: white;
 }
