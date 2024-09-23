@@ -24,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const description = encodeURIComponent(calendarDescription);
     //const image = encodeURIComponent(imageUrl);
 
-    console.log(pageUrl + image)
-
     // Met à jour les métadonnées
     function updateMetaTags() {
         document.getElementById('og-title').setAttribute('content', title);
