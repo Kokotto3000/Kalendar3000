@@ -13,16 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const copyText = document.getElementById("input");
     copyText.value= calendarUrl;
-    const imageUrl = 'img/kalendar3000-screenshot-pm.png';
+    const imageUrl = 'https://kokotto3000.com/kalendar3000-screenshot-1200-630.png';
     const calendarTitle = 'Mon Super Calendrier RH 3000';
     const calendarDescription = 'Découvrez les événements RH à ne pas manquer cette année !';
-    console.log(calendarUrl +imageUrl)
+    console.log(imageUrl)
 
     // Informations dynamiques à partager
     const pageUrl = encodeURIComponent(calendarUrl); // URL de la page actuelle
     const title = encodeURIComponent(calendarTitle);
     const description = encodeURIComponent(calendarDescription);
-    const image = encodeURIComponent(imageUrl);
+    //const image = encodeURIComponent(imageUrl);
 
     console.log(pageUrl + image)
 
@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateMetaTags() {
         document.getElementById('og-title').setAttribute('content', title);
         document.getElementById('og-description').setAttribute('content', description);
-        document.getElementById('og-image').setAttribute('content', pageUrl + image);
+        document.getElementById('og-image').setAttribute('content', 'https://kokotto3000.com/kalendar3000-screenshot-1200-630.png');
         document.getElementById('og-url').setAttribute('content', pageUrl);
         
         document.getElementById('twitter-title').setAttribute('content', title);
         document.getElementById('twitter-description').setAttribute('content', description);
-        document.getElementById('twitter-image').setAttribute('content', pageUrl + image);
+        document.getElementById('twitter-image').setAttribute('content', imageUrl);
     }
 
     
